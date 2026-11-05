@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   left: 0;
   width: 100%;
   z-index: 1030;
-  padding: 10px 0 !important;
+  padding: 12px 0 !important;
   display: flex !important;
   align-items: center;
 }
@@ -49,10 +49,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   padding: 0 15px;
 }
 
+/* Tamaño del logo prominente y proporcionado */
 .navbar-brand img {
-  max-height: 45px;
-  width: 159px;
-  height: auto;
+  max-height: 65px !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 .navbar-toggler {
@@ -142,31 +143,42 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Hero Section & Carrusel (Solución Funcional Estándar)
+   Carrusel de Pantalla Completa (Full Screen Hero)
    ========================================================================== */
-#heroCarousel.carusel, 
-#heroCarousel.carousel,
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  min-height: 550px;
-}
-
+#heroCarousel.carousel, 
+.carousel-inner,
 .carousel-item {
-  height: 100%;
-  width: 100%;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 600px;
 }
 
 .carousel-slide {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
+  width: 100% !important;
+  height: 100vh !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: relative;
+}
+
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 35, 75, 0.4);
+  z-index: 1;
+}
+
+.carousel-slide .container {
+  position: relative;
+  z-index: 2;
 }
 
 /* Botones y Elementos del Hero */
@@ -369,26 +381,75 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
   color: var(--accent-yellow);
 }
 
-/* Responsivo */
+/* ==========================================================================
+   Responsivo (Menú Hamburguesa Móvil)
+   ========================================================================== */
 @media (max-width: 991.98px) {
   .navbar-toggler {
-    display: block;
+    display: block !important;
   }
+
+  .Navbar .container {
+    flex-wrap: wrap !important;
+  }
+
+  .navbar-brand img {
+    max-height: 60px !important;
+    width: auto !important;
+  }
+
   .navbar-collapse {
     display: none !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-blue);
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 100% !important;
+    flex-basis: 100% !important;
+    background-color: var(--primary-blue) !important;
+    padding: 15px 10px !important;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-top: none !important; /* Eliminada la línea blanca */
   }
+
   .navbar-collapse.show {
     display: block !important;
   }
-  .navbar-nav {
+
+  .navbar-nav, .navbar-collapse .navbar-nav {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .nav-item {
+    width: 100% !important;
+    margin: 4px 0;
+  }
+
+  .nav-link {
+    display: block !important;
+    width: 100% !important;
+    padding: 10px 15px !important;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .nav-link:hover, 
+  .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--accent-yellow) !important;
+  }
+
+  .dropdown-menu {
+    position: static !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 15px !important;
+    width: 100% !important;
+    margin-top: 5px !important;
+  }
+
+  .dropdown-item {
+    padding: 8px 15px !important;
   }
 }
