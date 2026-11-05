@@ -11,18 +11,30 @@
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
     </head>
     <body>
-        <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- Navbar -->
+         <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="Inicial.html"><img src="imagenes/logoblanco.png" alt="Logo" width="200px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+                <a class="navbar-brand" href="Inicial.html">
+                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala" width="200px">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="Inicial.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Nosotros</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Inicial.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Productos</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="negocio.html">Crédito para Negocio</a></li>
+                            <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <ul class="dropdown-menu" aria-labelledby="productosDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
+                                </li>
                                 <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li>
                                 <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
@@ -30,15 +42,22 @@
                                 <li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="guarantees.html">Garantías</a></li>
-                        <li class="nav-item"><a class="nav-link" href="calculator.html">Cotizador</a></li>
-                        <li class="nav-item"><a class="nav-link" href="branches.html">Sucursales</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contactos</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="garantia.html">Garantías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cotizador.html">Cotizador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sucursales.html">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contactos</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-
+         </nav>
         <header class="py-5 bg-light mt-4">
             <div class="container text-center">
                 <h1 class="section-title"><i class="fas fa-home me-2"></i> Crédito para Vivienda</h1>
