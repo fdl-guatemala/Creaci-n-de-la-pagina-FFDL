@@ -12,10 +12,10 @@
     </head>
     <body>
         <!-- Navbar -->
-         <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
+        <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Inicial.html">
-                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala" width="200px">
+                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Inicial.html">Inicio</a>
+                            <a class="nav-link" href="Inicial.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -46,7 +46,7 @@
                             <a class="nav-link" href="garantia.html">Garantías</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cotizador.html">Cotizador</a>
+                            <a class="nav-link active" href="cotizador.html">Cotizador</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="sucursales.html">Sucursales</a>
@@ -57,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-         </nav>
+        </nav>
 
         <!-- Cabecera -->
         <header class="py-5 bg-light mt-4">
@@ -74,8 +74,9 @@
                     <form id="loanForm">
                         <div class="mb-3">
                             <label class="form-label fw-bold">Tipo de Crédito:</label>
-                            <!-- Opciones actualizadas con todos los productos -->
-                            <select id="tasaInteres" class="form-select">
+                            <!-- Opción inicial por defecto desactivada -->
+                            <select id="tasaInteres" class="form-select" onchange="validarSeleccion()">
+                                <option value="" selected disabled>Seleccione préstamo</option>
                                 <option value="0.02">Crédito para Negocio</option>
                                 <option value="0.025">Crédito Para Gastos Personales</option>
                                 <option value="0.018">Crédito para Vivienda</option>
@@ -86,22 +87,22 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-bold">Monto del Crédito (Q):</label>
-                            <input type="number" id="monto" class="form-control" placeholder="Ej. 15000" min="100" required>
+                            <input type="number" id="monto" class="form-control" placeholder="Ej. 15000" min="100" required disabled>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold">Plazo en Meses:</label>
-                            <input type="number" id="plazo" class="form-control" placeholder="Ej. 12, 24, 36..." min="1" max="120" required>
+                            <input type="number" id="plazo" class="form-control" placeholder="Ej. 12, 24, 36..." min="1" max="120" required disabled>
                         </div>
-                        <button type="button" onclick="calcularCuota()" class="btn btn-primary w-100 py-2 fw-bold">Calcular Cuota</button>
+                        <button type="button" id="btnCalcular" onclick="calcularCuota()" class="btn btn-primary w-100 py-2 fw-bold" disabled>Calcular Cuota</button>
                     </form>
 
                     <!-- Resultado del cálculo -->
                     <div id="resultado" class="mt-4 p-3 bg-light rounded text-center" style="display: none;">
-                        <h4 class="text-primary fw-bold mb-2">Resultado de la Cotizacion</h4>
+                        <h4 class="text-primary fw-bold mb-2">Resultado de la Cotización</h4>
                         <p class="mb-1 text-muted">Cuota mensual estimada:</p>
                         <h2 id="cuotaMensual" class="text-dark fw-bold">Q 0.00</h2>
-                        <p class="small text-muted mt-2">* Valores aproximados sujetos a análisis de crédito y aprobación institucional.</p>
-                        <a href="contact.html" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-paper-plane me-1"></i> Solicitar este crédito</a>
+                        <p class="small text-muted mt-2">Valores aproximados sujetos a análisis de crédito y aprobación institucional.</p>
+                        <a href="contacto.html" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-paper-plane me-1"></i> Solicitar este crédito</a>
                     </div>
                 </div>
             </div>
@@ -144,14 +145,40 @@
             </div>
         </footer>
 
-        <!-- Script de Cálculo Dinámico -->
+        <!-- Scripts de Control y Cálculo -->
         <script>
+            function validarSeleccion() {
+                const selectTasa = document.getElementById('tasaInteres');
+                const montoInput = document.getElementById('monto');
+                const plazoInput = document.getElementById('plazo');
+                const btnCalcular = document.getElementById('btnCalcular');
+                const divResultado = document.getElementById('resultado');
+
+                if (selectTasa.value !== "") {
+                    montoInput.disabled = false;
+                    plazoInput.disabled = false;
+                    btnCalcular.disabled = false;
+                } else {
+                    montoInput.disabled = true;
+                    plazoInput.disabled = true;
+                    btnCalcular.disabled = true;
+                    montoInput.value = '';
+                    plazoInput.value = '';
+                    divResultado.style.display = 'none';
+                }
+            }
+
             function calcularCuota() {
                 const monto = parseFloat(document.getElementById('monto').value);
                 const plazo = parseInt(document.getElementById('plazo').value);
                 const tasa = parseFloat(document.getElementById('tasaInteres').value);
                 const divResultado = document.getElementById('resultado');
                 const txtCuota = document.getElementById('cuotaMensual');
+
+                if (isNaN(tasa) || tasa === 0) {
+                    alert('Por favor, selecciona un tipo de crédito.');
+                    return;
+                }
 
                 if (!monto || monto <= 0) {
                     alert('Por favor, ingresa un monto de crédito válido.');
