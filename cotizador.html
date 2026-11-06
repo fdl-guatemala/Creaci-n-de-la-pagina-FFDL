@@ -86,7 +86,8 @@
                                 <li>
                                     <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
                                 </li>
-                                <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li>
+                                <!-- <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li> -->
+                                 <li><a class="dropdown-item" href="agricola.html">Credito Agricola</a></li>
                                 <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
@@ -103,7 +104,7 @@
                             <a class="nav-link" href="sucursales.html">Sucursales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contactos</a>
+                            <a class="nav-link" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -125,19 +126,20 @@
                     <form id="loanForm">
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Tipo de Crédito:</label>
-                            <select id="tasaInteres" class="form-select form-select-lg" onchange="validarSeleccion()">
+                            <select id="tipoCredito" class="form-select form-select-lg" onchange="validarSeleccion()">
                                 <option value="" selected disabled>Seleccione préstamo</option>
-                                <option value="0.02">Crédito para Negocio</option>
-                                <option value="0.025">Crédito Para Gastos Personales</option>
-                                <option value="0.018">Crédito para Vivienda</option>
-                                <option value="0.02">Crédito Verde</option>
-                                <option value="0.022">Crédito de Temporada</option>
-                                <option value="0.02">Crédito OCJ</option>
+                                <option value="ESCALONADO">Crédito para Negocio</option>
+                                <option value="ESCALONADO">Crédito Agrícola Mujeres FDL</option>
+                                <option value="ESCALONADO">Crédito para Vivienda</option>
+                                <option value="ESCALONADO">Crédito Verde</option>
+                                <option value="ESCALONADO">Crédito de Temporada</option>
+                                <option value="OCJ">Crédito OCJ</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Monto del Crédito (Q):</label>
-                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="100" required disabled>
+                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="100" max="160000" required disabled>
+                            <div class="form-text" id="montoHelp">Monto máximo permitido: Q 160,000.00</div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Plazo en Meses:</label>
@@ -151,7 +153,7 @@
                         <h4 class="text-primary fw-bold mb-2">Resultado de la Cotización</h4>
                         <p class="mb-1 text-muted">Cuota mensual estimada:</p>
                         <h2 id="cuotaMensual" class="text-dark fw-bold display-6">Q 0.00</h2>
-                        <p class="small text-muted mt-2">Valores aproximados sujetos a análisis de crédito y aprobación institucional.</p>
+                        <p class="small text-muted mt-2" id="infoTasa"></p>
                         <a href="contacto.html" class="btn btn-outline-primary btn-md mt-2 fw-bold"><i class="fas fa-paper-plane me-1"></i> Solicitar este crédito</a>
                     </div>
                 </div>
@@ -203,16 +205,23 @@
         <!-- Scripts de Control y Cálculo -->
         <script>
             function validarSeleccion() {
-                const selectTasa = document.getElementById('tasaInteres');
+                const selectCredito = document.getElementById('tipoCredito');
                 const montoInput = document.getElementById('monto');
                 const plazoInput = document.getElementById('plazo');
                 const btnCalcular = document.getElementById('btnCalcular');
                 const divResultado = document.getElementById('resultado');
+                const montoHelp = document.getElementById('montoHelp');
 
-                if (selectTasa.value !== "") {
+                if (selectCredito.value !== "") {
                     montoInput.disabled = false;
                     plazoInput.disabled = false;
                     btnCalcular.disabled = false;
+
+                    if (selectCredito.value === "OCJ") {
+                        montoHelp.textContent = "Monto máximo permitido: Q 30,000.00";
+                    } else {
+                        montoHelp.textContent = "Monto máximo permitido: Q 160,000.00";
+                    }
                 } else {
                     montoInput.disabled = true;
                     plazoInput.disabled = true;
@@ -223,14 +232,47 @@
                 }
             }
 
+            // Cálculo de Tasa Anual según el producto y monto ingresado
+            function obtenerTasaAnual(monto, tipo) {
+                // Lógica específica para Crédito OCJ (Tasa fija del 18% hasta Q30,000.00)
+                if (tipo === "OCJ") {
+                    if (monto <= 30000) {
+                        return 0.18;
+                    }
+                    return null; // N/A si excede de Q30,000.00
+                }
+
+                // Lógica escalonada para Negocio, Agrícola, Vivienda, Verde y Temporada
+                if (tipo === "ESCALONADO") {
+                    if (monto <= 5000) return 0.60;
+                    if (monto > 5000 && monto <= 10000) return 0.48;
+                    if (monto > 10000 && monto <= 20000) return 0.39;
+                    if (monto > 20000 && monto <= 30000) return 0.36;
+                    if (monto > 30000 && monto <= 50000) return 0.33;
+                    if (monto > 50000 && monto <= 80000) return 0.27;
+                    if (monto > 80000 && monto <= 110000) return 0.24;
+                    if (monto > 110000 && monto <= 160000) return 0.21;
+                    return null; // N/A si excede Q160,000.00
+                }
+
+                return parseFloat(tipo);
+            }
+
+            // Equivalente exacto a la función =PAGO(tasa_mensual, plazo, -monto) de Excel
+            function funcionPago(tasaMensual, nper, pv) {
+                if (tasaMensual === 0) return pv / nper;
+                return (pv * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -nper));
+            }
+
             function calcularCuota() {
                 const monto = parseFloat(document.getElementById('monto').value);
                 const plazo = parseInt(document.getElementById('plazo').value);
-                const tasa = parseFloat(document.getElementById('tasaInteres').value);
+                const tipo = document.getElementById('tipoCredito').value;
                 const divResultado = document.getElementById('resultado');
                 const txtCuota = document.getElementById('cuotaMensual');
+                const infoTasa = document.getElementById('infoTasa');
 
-                if (isNaN(tasa) || tasa === 0) {
+                if (!tipo) {
                     alert('Por favor, selecciona un tipo de crédito.');
                     return;
                 }
@@ -245,11 +287,24 @@
                     return;
                 }
 
-                // Fórmula financiera de cuota fija
-                const cuota = (monto * tasa * Math.pow(1 + tasa, plazo)) / (Math.pow(1 + tasa, plazo) - 1);
+                const tasaAnual = obtenerTasaAnual(monto, tipo);
+
+                if (tasaAnual === null) {
+                    const limite = (tipo === "OCJ") ? "Q 30,000.00" : "Q 160,000.00";
+                    alert('El monto ingresado excede el límite máximo financiable de ' + limite + ' para este tipo de crédito.');
+                    divResultado.style.display = 'none';
+                    return;
+                }
+
+                // Tasa mensual (Tasa Anual / 12)
+                const tasaMensual = tasaAnual / 12;
+
+                // Cálculo con la fórmula =PAGO
+                const cuota = funcionPago(tasaMensual, plazo, monto);
 
                 divResultado.style.display = 'block';
                 txtCuota.textContent = 'Q ' + cuota.toFixed(2);
+                infoTasa.textContent = `Tasa anual aplicada: ${(tasaAnual * 100).toFixed(0)}% (${(tasaMensual * 100).toFixed(2)}% mensual). Valores aproximados sujetos a aprobación.`;
             }
         </script>
 
