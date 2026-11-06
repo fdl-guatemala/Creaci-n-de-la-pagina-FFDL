@@ -9,13 +9,62 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+        <style>
+            /* Estilo personalizado para la tarjeta gris clara del formulario */
+            .contact-card-gray {
+                background-color: #f8f9fa !important;
+                border: 1px solid #e2e8f0;
+            }
+            .contact-card-gray h3 {
+                color: var(--primary-blue) !important;
+            }
+            .contact-card-gray label {
+                color: #2d3748 !important;
+            }
+            /* Botón Amarillo Personalizado */
+            .btn-accent-yellow {
+                background-color: var(--accent-yellow) !important;
+                color: var(--primary-blue) !important;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .btn-accent-yellow:hover {
+                background-color: var(--accent-yellow-hover) !important;
+                color: var(--primary-blue) !important;
+                transform: translateY(-2px);
+            }
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: #FFF;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
          <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Inicial.html">
-                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala" width="200px">
+                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +73,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Inicial.html">Inicio</a>
+                            <a class="nav-link" href="Inicial.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -52,87 +101,29 @@
                             <a class="nav-link" href="sucursales.html">Sucursales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contactos</a>
+                            <a class="nav-link active" href="contacto.html">Contactos</a>
                         </li>
                     </ul>
                 </div>
             </div>
          </nav>
+
         <!-- Cabecera -->
         <header class="py-5 text-white" style="background-color: var(--primary-blue); border: none; margin-top: 0 !important;">
             <div class="container text-center">
-                <h1 class="section-title text-white">Contáctanos</h1>
-                <p class="section-subtitle text-white-50">Estamos aquí para resolver tus dudas y atender tus solicitudes de crédito.</p>
+                <h1 class="section-title text-white" style="font-size: 2.5rem;">Contáctanos</h1>
+                <p class="section-subtitle text-white-50" style="font-size: 1.1rem;">Estamos aquí para resolver tus dudas y atender tus solicitudes de crédito.</p>
             </div>
         </header>
 
-        <!-- Sección de Contacto de Dos Columnas -->
+        <!-- Sección de Formulario -->
         <section class="py-5">
             <div class="container">
-                <div class="row g-4">
-                    
-                    <!-- Columna Izquierda: Información Oficial -->
-                    <div class="col-lg-6">
-                        <div class="card service-card p-4 h-100 shadow-sm">
-                            <h3 class="card-title text-primary mb-4">Información Oficial</h3>
-                            <hr class="mb-4">
-
-                            <!-- 1. Oficina Central (Mapa + Enlace a Google Maps) -->
-                            <a href="https://maps.google.com/?q=12+Calle+A+2-34+Zona+1,+Ciudad+de+Guatemala" target="_blank" class="d-block mb-3 p-3 border rounded bg-white text-decoration-none text-dark shadow-sm-hover">
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="text-danger fs-4 me-3"><i class="fas fa-map-marker-alt"></i></div>
-                                    <div>
-                                        <h6 class="fw-bold mb-0">Oficina Central</h6>
-                                        <p class="text-muted mb-0 small">12 Calle A 2-34 Zona 1, Cdad. de Guatemala</p>
-                                    </div>
-                                </div>
-                                <div class="ratio ratio-16x9 rounded overflow-hidden border mt-2">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.3300460028695!2d-90.52062668515933!3d14.637196989779126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a21857252237%3A0x423aaf9dbc2daf03!2sFDL+de+Guatemala!5e0!3m2!1ses-419!2sgt!4v1554355216791!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                                </div>
-                            </a>
-
-                            <!-- 2. Teléfono Principal (Llamar) -->
-                            <a href="tel:+50222324301" class="d-flex align-items-start mb-3 p-3 border rounded bg-white text-decoration-none text-dark shadow-sm-hover">
-                                <div class="text-danger fs-4 me-3"><i class="fas fa-phone-alt"></i></div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Teléfono Principal</h6>
-                                    <p class="text-muted mb-0 small">2232-4301</p>
-                                </div>
-                            </a>
-
-                            <!-- 3. WhatsApp de Atención (WhatsApp) -->
-                            <a href="https://wa.me/50251948831" target="_blank" class="d-flex align-items-start mb-3 p-3 border rounded bg-white text-decoration-none text-dark shadow-sm-hover">
-                                <div class="text-success fs-4 me-3"><i class="fab fa-whatsapp"></i></div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">WhatsApp de Atención</h6>
-                                    <p class="text-muted mb-0 small">5194-8831</p>
-                                </div>
-                            </a>
-
-                            <!-- 4. Correo Electrónico (Email) -->
-                            <a href="mailto:info@ffdldeguatemala.org" class="d-flex align-items-start mb-3 p-3 border rounded bg-white text-decoration-none text-dark shadow-sm-hover">
-                                <div class="text-primary fs-4 me-3"><i class="fas fa-envelope"></i></div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Correo Electrónico</h6>
-                                    <p class="text-muted mb-0 small">info@ffdldeguatemala.org</p>
-                                </div>
-                            </a>
-
-                            <!-- Horarios -->
-                            <div class="d-flex align-items-start p-3 border rounded bg-white">
-                                <div class="text-warning fs-4 me-3"><i class="fas fa-clock"></i></div>
-                                <div>
-                                    <h6 class="fw-bold mb-1">Horarios</h6>
-                                    <p class="text-muted mb-0 small">Lunes a Viernes: 7:00 AM - 4:00 PM<br>Sábados: 8:00 AM - 12:00 PM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna Derecha: Formulario de Contacto -->
-                    <div class="col-lg-6">
-                        <div class="card service-card p-4 h-100 shadow-sm">
-                            <h3 class="card-title text-primary mb-4">Envíanos un Mensaje</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card contact-card-gray p-5 shadow-sm rounded-4">
+                            <h3 class="card-title text-center mb-3" style="font-size: 2rem; font-weight: 700;">Envíanos un Mensaje</h3>
+                            <p class="text-center text-muted mb-4" style="font-size: 1.05rem;">Completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
                             <hr class="mb-4">
 
                             <div id="mensajeAlerta" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
@@ -141,30 +132,34 @@
                             </div>
 
                             <form id="contactForm" action="https://formspree.io/f/tu-codigo" method="POST">
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold small">Nombre Completo:</label>
-                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Carlos Mendoza" required>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold" style="font-size: 1.05rem;">Nombre Completo:</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control form-control-lg" placeholder="Ej. Carlos Mendoza" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold small">Teléfono / WhatsApp:</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. 5555-1234" required>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold" style="font-size: 1.05rem;">Teléfono / WhatsApp:</label>
+                                    <input type="tel" id="telefono" name="telefono" class="form-control form-control-lg" placeholder="Ej. 5555-1234" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold small">Correo Electrónico:</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold" style="font-size: 1.05rem;">Correo Electrónico:</label>
+                                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="correo@ejemplo.com" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold small">Mensaje o Consulta:</label>
-                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Escribe aquí tu consulta sobre créditos, garantías o sucursales..." required></textarea>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold" style="font-size: 1.05rem;">Mensaje o Consulta:</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="5" placeholder="Escribe aquí tu consulta sobre créditos, garantías o sucursales..." required style="font-size: 1.05rem;"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Enviar Mensaje</button>
+                                <button type="submit" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.15rem;">Enviar Mensaje</button>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
+
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
         <!-- Footer -->
         <footer class="footer py-5">

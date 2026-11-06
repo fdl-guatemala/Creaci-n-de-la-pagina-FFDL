@@ -9,6 +9,57 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+        <style>
+            /* Estilo personalizado para la tarjeta gris clara del cotizador */
+            .calculator-card-gray {
+                background-color: #f8f9fa !important;
+                border: 1px solid #e2e8f0;
+            }
+            .calculator-card-gray label {
+                color: #2d3748 !important;
+            }
+            /* Botón Amarillo Personalizado */
+            .btn-accent-yellow {
+                background-color: var(--accent-yellow) !important;
+                color: var(--primary-blue) !important;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .btn-accent-yellow:hover:not(:disabled) {
+                background-color: var(--accent-yellow-hover) !important;
+                color: var(--primary-blue) !important;
+                transform: translateY(-2px);
+            }
+            .btn-accent-yellow:disabled {
+                background-color: #e2e8f0 !important;
+                color: #a0aec0 !important;
+                border: none;
+            }
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: #FFF;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
@@ -62,20 +113,19 @@
         <!-- Cabecera -->
         <header class="py-5 text-white" style="background-color: var(--primary-blue); border: none; margin-top: 0 !important;">
             <div class="container text-center">
-                <h1 class="section-title text-white">Cotizador</h1>
-                <p class="section-subtitle text-white-50">Selecciona la línea de crédito deseada para calcular tu cuota mensual.</p>
+                <h1 class="section-title text-white" style="font-size: 2.5rem;">Cotizador</h1>
+                <p class="section-subtitle text-white-50" style="font-size: 1.1rem;">Selecciona la línea de crédito deseada para calcular tu cuota mensual.</p>
             </div>
         </header>
 
         <!-- Formulario del Simulador -->
         <section class="py-5">
             <div class="container" style="max-width: 700px;">
-                <div class="card service-card p-4 shadow-sm">
+                <div class="card calculator-card-gray p-5 shadow-sm rounded-4">
                     <form id="loanForm">
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Tipo de Crédito:</label>
-                            <!-- Opción inicial por defecto desactivada -->
-                            <select id="tasaInteres" class="form-select" onchange="validarSeleccion()">
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" style="font-size: 1.05rem;">Tipo de Crédito:</label>
+                            <select id="tasaInteres" class="form-select form-select-lg" onchange="validarSeleccion()">
                                 <option value="" selected disabled>Seleccione préstamo</option>
                                 <option value="0.02">Crédito para Negocio</option>
                                 <option value="0.025">Crédito Para Gastos Personales</option>
@@ -85,28 +135,33 @@
                                 <option value="0.02">Crédito OCJ</option>
                             </select>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Monto del Crédito (Q):</label>
-                            <input type="number" id="monto" class="form-control" placeholder="Ej. 15000" min="100" required disabled>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" style="font-size: 1.05rem;">Monto del Crédito (Q):</label>
+                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="100" required disabled>
                         </div>
                         <div class="mb-4">
-                            <label class="form-label fw-bold">Plazo en Meses:</label>
-                            <input type="number" id="plazo" class="form-control" placeholder="Ej. 12, 24, 36..." min="1" max="120" required disabled>
+                            <label class="form-label fw-bold" style="font-size: 1.05rem;">Plazo en Meses:</label>
+                            <input type="number" id="plazo" class="form-control form-control-lg" placeholder="Ej. 12, 24, 36..." min="1" max="120" required disabled>
                         </div>
-                        <button type="button" id="btnCalcular" onclick="calcularCuota()" class="btn btn-primary w-100 py-2 fw-bold" disabled>Calcular Cuota</button>
+                        <button type="button" id="btnCalcular" onclick="calcularCuota()" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.15rem;" disabled>Calcular Cuota</button>
                     </form>
 
                     <!-- Resultado del cálculo -->
-                    <div id="resultado" class="mt-4 p-3 bg-light rounded text-center" style="display: none;">
+                    <div id="resultado" class="mt-4 p-4 bg-white border rounded-3 text-center" style="display: none;">
                         <h4 class="text-primary fw-bold mb-2">Resultado de la Cotización</h4>
                         <p class="mb-1 text-muted">Cuota mensual estimada:</p>
-                        <h2 id="cuotaMensual" class="text-dark fw-bold">Q 0.00</h2>
+                        <h2 id="cuotaMensual" class="text-dark fw-bold display-6">Q 0.00</h2>
                         <p class="small text-muted mt-2">Valores aproximados sujetos a análisis de crédito y aprobación institucional.</p>
-                        <a href="contacto.html" class="btn btn-outline-primary btn-sm mt-2"><i class="fas fa-paper-plane me-1"></i> Solicitar este crédito</a>
+                        <a href="contacto.html" class="btn btn-outline-primary btn-md mt-2 fw-bold"><i class="fas fa-paper-plane me-1"></i> Solicitar este crédito</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
         <!-- Footer -->
         <footer class="footer py-5">

@@ -9,13 +9,64 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+        <style>
+            /* Tarjeta personalizada en gris claro suave */
+            .product-card-gray {
+                background-color: #f8f9fa !important;
+                border: 1px solid #e2e8f0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .product-card-gray h3, .product-card-gray h4 {
+                color: var(--primary-blue) !important;
+                font-weight: 700;
+            }
+            .product-card-gray p, .product-card-gray li {
+                color: #2d3748 !important;
+            }
+            /* Botón Amarillo Institucional */
+            .btn-accent-yellow {
+                background-color: var(--accent-yellow) !important;
+                color: var(--primary-blue) !important;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .btn-accent-yellow:hover {
+                background-color: var(--accent-yellow-hover) !important;
+                color: var(--primary-blue) !important;
+                transform: translateY(-2px);
+            }
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: #FFF;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
-         <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
+        <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Inicial.html">
-                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala" width="200px">
+                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +75,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Inicial.html">Inicio</a>
+                            <a class="nav-link" href="Inicial.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="nosotros.html">Nosotros</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                            <a class="nav-link dropdown-toggle active" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="productosDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
-                                </li>
+                                <li><a class="dropdown-item" href="negocio.html">Crédito para Negocio</a></li>
                                 <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li>
-                                <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
+                                <li><a class="dropdown-item active" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
                                 <li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>
@@ -57,41 +106,101 @@
                     </ul>
                 </div>
             </div>
-         </nav>
+        </nav>
+
+        <!-- Cabecera -->
         <header class="py-5 text-white" style="background-color: var(--primary-blue); border: none; margin-top: 0 !important;">
             <div class="container text-center">
-                <h1 class="section-title text-white">Crédito para Vivienda</h1>
-                <p class="section-subtitle text-white-50">Si anhelas mejor ls vivienda para tu familia, FDL quiere brindarte apoyo financiero de acuerdo a tus proyectos.</p>
+                <h1 class="section-title text-white" style="font-size: 2.5rem;">Crédito para Vivienda</h1>
+                <p class="section-subtitle text-white-50" style="font-size: 1.1rem;">Si anhelas mejorar la vivienda para tu familia, FDL quiere brindarte apoyo financiero de acuerdo a tus proyectos.</p>
             </div>
         </header>
 
+        <!-- Contenido del Producto -->
         <section class="py-5">
-            <div class="container" style="max-width: 800px;">
-                <div class="card service-card p-4">
-                    <h3 class="card-title text-primary mb-3">Prerrequisitos:</h3>
-                    <p class="text-muted">Si te interesa optar a un crédito completa tus datos y nos comunicaremos contigo.</p>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Ser guatemalteco (a).</li>
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Edad entre 18 y 65 años.</li>
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Presentar DPI.</li>
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Comprobante de servicios básicos.</li>
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Constancia laboral.</li>
-                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Conocer al compañero (Fianza Cruzada).</li>
-                    </ul>
-                    <img src="imagenes/Imagen7.png" alt="Imagenes de FDL">
-                    <a href="cotizador.html" class="btn btn-primary btn-lg w-100">Simular tu Crédito de Vivienda</a>
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    
+                    <!-- Columna Izquierda: Requisitos -->
+                    <div class="col-md-6">
+                        <div class="card product-card-gray p-4 shadow-sm rounded-4 h-100">
+                            <h3 class="mb-3"><i class="fas fa-clipboard-list me-2 text-primary"></i>Prerrequisitos</h3>
+                            <p class="mb-3">Si te interesa optar a un crédito para vivienda, completa tus datos y nos comunicaremos contigo:</p>
+                            
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Ser guatemalteco (a).</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Edad entre 18 y 65 años.</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Presentar DPI.</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Comprobante de servicios básicos.</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Constancia laboral o respaldo de ingresos.</li>
+                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Conocer al compañero (en caso de Fianza Cruzada).</li>
+                            </ul>
+
+                            <div class="mt-auto">
+                                <a href="cotizador.html" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.1rem;"><i class="fas fa-calculator me-2"></i>Simular tu Crédito de Vivienda</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Imagen e Información -->
+                    <div class="col-md-6">
+                        <div class="card product-card-gray p-4 text-center shadow-sm rounded-4 h-100">
+                            <div class="overflow-hidden rounded-3 mb-3 border bg-white">
+                                <img src="imagenes/Imagen7.png" alt="Crédito para Vivienda FFDL" class="img-fluid rounded">
+                            </div>
+                            <h4 class="mb-2">¿Quieres construir o remodelar?</h4>
+                            <p class="small text-muted mb-4">Te asesoramos para que obtengas las mejores condiciones financieras adaptadas a tu hogar.</p>
+                            
+                            <a href="contacto.html" class="btn btn-outline-primary w-100 py-3 fw-bold"><i class="fas fa-paper-plane me-2"></i>Solicitar Información</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Footer -->
         <footer class="footer py-5">
-            <div class="container text-center text-md-start">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-6"><p class="mb-0">© 2026 Fundación Fondo de Desarrollo Local de Guatemala.</p></div>
-                    <div class="col-md-6 text-md-end"><a href="contact.html" class="footer-link">Contáctanos</a></div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h5 class="footer-title mb-3">Contacto</h5>
+                        <ul class="footer-contact list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 calle "A" 2-34 zona 1, Guatemala</li>
+                            <li><i class="fas fa-phone me-2"></i> +502 2232-4301</li>
+                            <li><i class="fas fa-envelope me-2"></i> callcenter@ffdldeguatemala.org</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                        <h5 class="footer-title mb-3">Sucursales</h5>
+                        <ul class="footer-contact list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Sucursal Chimaltenango: RN14 Casa No. 63 Zona, Chimaltenango</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Sucursal Mazatenango: 4 Av. 1-05 Zona 1, Mazatenango</li> 
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Sucursal Quetzaltenango: 14 Calle "C" 19-64 zona 3, entrada al condominio el triángulo</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="footer-title mb-3">Horario de Atención</h5>
+                        <ul class="footer-hours list-unstyled">
+                            <li><i class="fas fa-check me-2"></i>Lunes a Viernes: 7:00 AM - 4:00 PM</li>
+                            <li><i class="fas fa-check me-2"></i>Sábados: 8:00 AM - 12:00 PM</li>
+                            <li><i class="fas fa-check me-2"></i>Domingos: Cerrado</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="footer-divider my-4">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start"><p class="mb-0">© 2026 Fundación Fondo de Desarrollo Local de Guatemala. Todos los derechos reservados.</p></div>
+                    <div class="col-md-6 text-center text-md-end"><a href="#" class="footer-link">soportetecnico@ffdldeguatemala.org</a></div>
                 </div>
             </div>
         </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/script.js"></script>
     </body>

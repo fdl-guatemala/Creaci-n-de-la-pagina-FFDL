@@ -9,13 +9,56 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
+        <style>
+            /* Estilo personalizado para las tarjetas de sucursales en gris suave */
+            .branch-card-gray {
+                background-color: #f8f9fa !important;
+                border: 1px solid #e2e8f0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .branch-card-gray:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+            }
+            .branch-card-gray h4 {
+                color: var(--primary-blue) !important;
+                font-weight: 700;
+            }
+            .branch-card-gray p {
+                color: #2d3748 !important;
+            }
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: #FFF;
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
          <nav class="Navbar navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="Inicial.html">
-                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala" width="200px">
+                    <img src="imagenes/logoblanco.png" alt="Logo de FFLD de Guatemala">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +67,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Inicial.html">Inicio</a>
+                            <a class="nav-link" href="Inicial.html">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="nosotros.html">Nosotros</a>
@@ -49,7 +92,7 @@
                             <a class="nav-link" href="cotizador.html">Cotizador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="sucursales.html">Sucursales</a>
+                            <a class="nav-link active" href="sucursales.html">Sucursales</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contacto.html">Contactos</a>
@@ -61,8 +104,8 @@
 
         <header class="py-5 text-white" style="background-color: var(--primary-blue); border: none; margin-top: 0 !important;">
             <div class="container text-center">
-                <h1 class="section-title text-white">Nuestras Sucursales</h1>
-                <p class="section-subtitle text-white-50">Visítanos en nuestras oficinas y nivel nacional.</p>
+                <h1 class="section-title text-white" style="font-size: 2.5rem;">Nuestras Sucursales</h1>
+                <p class="section-subtitle text-white-50" style="font-size: 1.1rem;">Visítanos en nuestras oficinas a nivel nacional.</p>
             </div>
         </header>
 
@@ -73,14 +116,14 @@
                     
                     <!-- 1. Oficina Central -->
                     <div class="col-md-6">
-                        <div class="card h-100 service-card p-4 shadow-sm">
-                            <h4 class="card-title text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Oficina Central</h4>
-                            <p class="card-text text-muted mb-1"><strong>Dirección:</strong> 12 calle "A" 2-34 zona 1, Guatemala</p>
-                            <p class="card-text text-muted mb-1"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
-                            <p class="card-text text-muted mb-1"><strong>Teléfono:</strong> 2232-4301</p>
-                            <p class="card-text text-muted mb-1"><strong>WhatsApp:</strong> 5194-8831</p>
-                            <p class="card-text text-muted mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                        <div class="card h-100 branch-card-gray p-4 shadow-sm rounded-4">
+                            <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Oficina Central</h4>
+                            <p class="mb-2"><strong>Dirección:</strong> 12 calle "A" 2-34 zona 1, Guatemala</p>
+                            <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
+                            <p class="mb-2"><strong>Teléfono:</strong> 2232-4301</p>
+                            <p class="mb-2"><strong>WhatsApp:</strong> 5194-8831</p>
+                            <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
+                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.3300460028695!2d-90.52062668515933!3d14.637196989779126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a21857252237%3A0x423aaf9dbc2daf03!2sFDL+de+Guatemala!5e0!3m2!1ses-419!2sgt!4v1554355216791!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
@@ -88,13 +131,13 @@
 
                     <!-- 2. Chimaltenango -->
                     <div class="col-md-6">
-                        <div class="card h-100 service-card p-4 shadow-sm">
-                            <h4 class="card-title text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Chimaltenango</h4>
-                            <p class="card-text text-muted mb-1"><strong>Dirección:</strong> RN14 Casa No. 63 Zona, Chimaltenango</p>
-                            <p class="card-text text-muted mb-1"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
-                            <p class="card-text text-muted mb-1"><strong>Teléfono:</strong> 7839-4066</p>
-                            <p class="card-text text-muted mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                        <div class="card h-100 branch-card-gray p-4 shadow-sm rounded-4">
+                            <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Chimaltenango</h4>
+                            <p class="mb-2"><strong>Dirección:</strong> RN14 Casa No. 63 Zona, Chimaltenango</p>
+                            <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
+                            <p class="mb-2"><strong>Teléfono:</strong> 7839-4066</p>
+                            <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
+                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9698627872835!2d-90.8219292851591!3d14.657651789766218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85896d88aa093555%3A0x821f3619e2426265!2sFDL+Chimaltenango!5e0!3m2!1ses-419!2sgt!4v1554355377805!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
@@ -102,13 +145,13 @@
 
                     <!-- 3. Mazatenango -->
                     <div class="col-md-6">
-                        <div class="card h-100 service-card p-4 shadow-sm">
-                            <h4 class="card-title text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Mazatenango</h4>
-                            <p class="card-text text-muted mb-1"><strong>Dirección:</strong> 4 Av. 1-05 Zona 1, Mazatenango</p>
-                            <p class="card-text text-muted mb-1"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
-                            <p class="card-text text-muted mb-1"><strong>Teléfono:</strong> 7872-3492</p>
-                            <p class="card-text text-muted mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                        <div class="card h-100 branch-card-gray p-4 shadow-sm rounded-4">
+                            <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Mazatenango</h4>
+                            <p class="mb-2"><strong>Dirección:</strong> 4 Av. 1-05 Zona 1, Mazatenango</p>
+                            <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
+                            <p class="mb-2"><strong>Teléfono:</strong> 7872-3492</p>
+                            <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
+                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.064577494334!2d-91.50600468516049!3d14.538298789842155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858ec21527a51ce7%3A0xe7f12856f37e9e5a!2sFDL+Mazatenango!5e0!3m2!1ses-419!2sgt!4v1554355030892!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
@@ -116,13 +159,13 @@
 
                     <!-- 4. Quetzaltenango -->
                     <div class="col-md-6">
-                        <div class="card h-100 service-card p-4 shadow-sm">
-                            <h4 class="card-title text-primary mb-3"><i class="fas fa-map-marker-alt me-2"></i>Quetzaltenango</h4>
-                            <p class="card-text text-muted mb-1"><strong>Dirección:</strong> 14 Calle "C" 19-64 zona 3, entrada al condominio El Triángulo</p>
-                            <p class="card-text text-muted mb-1"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
-                            <p class="card-text text-muted mb-1"><strong>Teléfono:</strong> 7725-4101</p>
-                            <p class="card-text text-muted mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border">
+                        <div class="card h-100 branch-card-gray p-4 shadow-sm rounded-4">
+                            <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-danger"></i>Quetzaltenango</h4>
+                            <p class="mb-2"><strong>Dirección:</strong> 14 Calle "C" 19-64 zona 3, entrada al condominio El Triángulo</p>
+                            <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
+                            <p class="mb-2"><strong>Teléfono:</strong> 7725-4101</p>
+                            <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
+                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.6388750465408!2d-91.52474998515684!3d14.845512289646903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e99a8bcb3a95f%3A0x47118d32b69ffc7!2sFDL+Quetzaltenango!5e0!3m2!1ses-419!2sgt!4v1554354727463!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
@@ -131,6 +174,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- Botón Flotante de WhatsApp -->
+        <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
 
         <!-- Footer -->
         <footer class="footer py-5">
