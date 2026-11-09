@@ -135,7 +135,7 @@
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Monto del Crédito (Q):</label>
-                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="100" max="160000" required disabled>
+                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="1000" max="160000" required disabled>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Plazo en Meses:</label>
@@ -244,7 +244,7 @@
                 }
 
                 if (tipo === "ESCALONADO") {
-                    if (monto <= 5000) return 0.60;
+                    if (monto >= 1000 && monto <= 5000) return 0.60;
                     if (monto > 5000 && monto <= 10000) return 0.48;
                     if (monto > 10000 && monto <= 20000) return 0.39;
                     if (monto > 20000 && monto <= 30000) return 0.36;
@@ -280,8 +280,9 @@
                     return;
                 }
 
-                if (!monto || monto <= 0) {
-                    alert('Por favor, ingresa un monto de crédito válido.');
+                // Validación de monto mínimo (Q 1,000.00)
+                if (!monto || monto < 1000) {
+                    alert('El monto mínimo permitido es de Q 1,000.00.');
                     return;
                 }
 
