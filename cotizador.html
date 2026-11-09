@@ -136,25 +136,23 @@
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Monto del Crédito (Q):</label>
                             <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="100" max="160000" required disabled>
-                            <div class="form-text" id="montoHelp">Monto máximo permitido: Q 160,000.00</div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Plazo en Meses:</label>
                             <select id="plazo" class="form-select form-select-lg" required disabled>
                                 <option value="" selected disabled>Seleccione el plazo</option>
                                 <option value="6">6 meses</option>
-                                <option value="12">8 meses</option>
-                                <option value="18">9 meses</option>
-                                <option value="6">10 meses</option>
+                                <option value="8">8 meses</option>
+                                <option value="9">9 meses</option>
+                                <option value="10">10 meses</option>
                                 <option value="12">12 meses</option>
-                                <option value="18">15 meses</option>
-                                <option value="6">18 meses</option>
-                                <option value="12">21 meses</option>
-                                <option value="18">24 meses</option>
-                                <option value="6">33 meses</option>
-                                <option value="12">36 meses</option>
+                                <option value="15">15 meses</option>
+                                <option value="18">18 meses</option>
+                                <option value="21">21 meses</option>
+                                <option value="24">24 meses</option>
+                                <option value="33">33 meses</option>
+                                <option value="36">36 meses</option>
                             </select>
-                            <div class="form-text">Plazos disponibles permitidos: 6, 8, 9, 10, 12, 15, 18, 21, 24, 33 o 36 meses.</div>
                         </div>
                         <button type="button" id="btnCalcular" onclick="calcularCuota()" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.15rem;" disabled>Calcular Cuota</button>
                     </form>
@@ -221,18 +219,11 @@
                 const plazoInput = document.getElementById('plazo');
                 const btnCalcular = document.getElementById('btnCalcular');
                 const divResultado = document.getElementById('resultado');
-                const montoHelp = document.getElementById('montoHelp');
 
                 if (selectCredito.value !== "") {
                     montoInput.disabled = false;
                     plazoInput.disabled = false;
                     btnCalcular.disabled = false;
-
-                    if (selectCredito.value === "OCJ") {
-                        montoHelp.textContent = "Monto máximo permitido: Q 30,000.00";
-                    } else {
-                        montoHelp.textContent = "Monto máximo permitido: Q 160,000.00";
-                    }
                 } else {
                     montoInput.disabled = true;
                     plazoInput.disabled = true;
@@ -317,6 +308,12 @@
                 divResultado.style.display = 'block';
                 txtCuota.textContent = 'Q ' + cuota.toFixed(2);
                 infoTasa.textContent = `Tasa anual aplicada: ${(tasaAnual * 100).toFixed(0)}% (${(tasaMensual * 100).toFixed(2)}% mensual). Valores aproximados sujetos a aprobación.`;
+
+                // Limpia los campos del formulario y bloquea nuevamente
+                document.getElementById('loanForm').reset();
+                document.getElementById('monto').disabled = true;
+                document.getElementById('plazo').disabled = true;
+                document.getElementById('btnCalcular').disabled = true;
             }
         </script>
 
