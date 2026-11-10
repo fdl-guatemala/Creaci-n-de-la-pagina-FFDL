@@ -39,6 +39,44 @@
                 transform: scale(1.1);
                 color: #FFF;
             }
+
+            /* Banner de Aliados: Más alto, amplio y visible */
+            .partners-section {
+                padding: 90px 0; /* Aumenta sustancialmente el ancho vertical del banner */
+                background-color: #f8f9fa;
+                overflow: hidden;
+            }
+            .partners-title {
+                margin-bottom: 50px;
+                font-weight: 700;
+                color: var(--primary-blue, #00234b);
+            }
+            .logos-container {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+            .logos-slide {
+                display: flex;
+                align-items: center;
+                gap: 100px; /* Separación amplia entre logos */
+                justify-content: space-around;
+                min-width: 100%;
+            }
+            .logos-slide img {
+                max-height: 95px; /* Logotipos más grandes y legibles */
+                width: auto;
+                object-fit: contain;
+                filter: grayscale(15%);
+                opacity: 0.9;
+                transition: all 0.3s ease;
+            }
+            .logos-slide img:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+                transform: scale(1.08);
+            }
         </style>
     </head>
     <body>
@@ -90,7 +128,7 @@
             </div>
         </nav>
 
-        <!-- Hero Section con Carrusel (Acelerado a 2.5 segundos por slide) -->
+        <!-- Hero Section con Carrusel -->
         <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -250,30 +288,28 @@
             </div>
         </section>
 
-        <!-- Sección de Compañias / aliados en movimiento -->
-         <section class="partners-section">
-            <div class="container-fluid">
-                <h3 class="partners-title fs-4"> Nuestros Aliados y Socios Estratégicos</h3>
+        <!-- Banner de Aliados Ampliado -->
+        <section class="partners-section">
+            <div class="container-fluid text-center">
+                <h3 class="partners-title fs-2">Nuestros Aliados y Socios Estratégicos</h3>
                 <div class="logos-container">
-                    <!-- Primer bloque de logos -->
-                     <div class="logos-slide">
+                    <div class="logos-slide">
                         <img src="imagenes/logo_transunion.svg" alt="transUnion">
                         <img src="imagenes/logo-redcamif.png" alt="Radcamit">
                         <img src="imagenes/logo-serinsa.png" alt="Serinsa">
                         <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
                         <img src="imagenes/logo_redimif.png" alt="Radimif">
-                     </div>
-                    <!-- Segundo bloque duplicado para garantizar el efecto infinito sin cortes -->
-                     <div class="logos-slide" aria-hidden="true">
+                    </div>
+                    <div class="logos-slide" aria-hidden="true">
                         <img src="imagenes/logo_transunion.svg" alt="transUnion">
                         <img src="imagenes/logo-redcamif.png" alt="Radcamit">
                         <img src="imagenes/logo-serinsa.png" alt="Serinsa">
                         <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
                         <img src="imagenes/logo_redimif.png" alt="Radimif">
-                     </div>
+                    </div>
                 </div>
             </div>
-         </section>
+        </section>
 
         <!-- Botón Flotante de WhatsApp -->
         <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
