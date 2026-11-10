@@ -489,3 +489,84 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
     padding: 8px 15px !important;
   }
 }
+
+/* ==========================================================================
+   Sección de Logos en Movimiento (Marquesina Infinita)
+   ========================================================================== */
+.partners-section {
+  background-color: var(--bg-light, #f8f9fa);
+  padding: 50px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.partners-title {
+  color: var(--primary-blue);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logos-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.logos-container::before,
+.logos-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-light, #f8f9fa), transparent);
+}
+
+.logos-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-light, #f8f9fa), transparent);
+}
+
+.logos-slide {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: scrollLogos 25s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.logos-slide img {
+  height: 60px;
+  width: auto;
+  object-clear: contain;
+  transition: filter 0.3s ease;
+}
+
+.logos-slide img:hover {
+  filter: brightness(1.1);
+}
+
+/* Animación del movimiento continuo */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 60px));
+  }
+}
+
+/* Pausar el movimiento cuando el usuario pasa el mouse por encima */
+.logos-container:hover .logos-slide {
+  animation-play-state: paused;
+}

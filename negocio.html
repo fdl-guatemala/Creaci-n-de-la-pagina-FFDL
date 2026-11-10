@@ -16,13 +16,50 @@
                 border: 1px solid #e2e8f0;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-            .product-card-gray h3, .product-card-gray h4 {
+            .product-card-gray:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+            }
+            .product-card-gray h3, .product-card-gray h4, .product-card-gray h5 {
                 color: var(--primary-blue) !important;
                 font-weight: 700;
             }
             .product-card-gray p, .product-card-gray li {
                 color: #2d3748 !important;
             }
+
+            /* Estilo para los cuadros de prerrequisitos */
+            .prereq-card {
+                background-color: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                padding: 24px 20px;
+                height: 100%;
+                transition: all 0.3s ease;
+            }
+            .prereq-card:hover {
+                border-color: var(--accent-yellow);
+                transform: translateY(-4px);
+                box-shadow: 0 6px 15px rgba(0,35,75,0.08);
+            }
+            .prereq-icon {
+                width: 60px;
+                height: 60px;
+                background-color: rgba(0, 35, 75, 0.05);
+                color: var(--primary-blue);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px auto;
+                font-size: 24px;
+                transition: all 0.3s ease;
+            }
+            .prereq-card:hover .prereq-icon {
+                background-color: var(--accent-yellow);
+                color: var(--primary-blue);
+            }
+
             /* Botón Amarillo Institucional */
             .btn-accent-yellow {
                 background-color: var(--accent-yellow) !important;
@@ -35,6 +72,7 @@
                 color: var(--primary-blue) !important;
                 transform: translateY(-2px);
             }
+
             /* Botón flotante de WhatsApp */
             .whatsapp-float {
                 position: fixed;
@@ -84,10 +122,9 @@
                             <a class="nav-link dropdown-toggle active" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="productosDropdown">
                                 <li>
-                                    <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
+                                    <a class="dropdown-item active" href="negocio.html">Crédito para Negocio</a>
                                 </li>
-                                <!-- <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li> -->
-                                 <li><a class="dropdown-item" href="agricola.html">Credito Agricola</a></li>
+                                <li><a class="dropdown-item" href="agricola.html">Credito Agricola</a></li>
                                 <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
@@ -122,42 +159,104 @@
         <!-- Contenido del Producto -->
         <section class="py-5">
             <div class="container">
-                <div class="row g-4 align-items-center">
-                    
-                    <!-- Columna Izquierda: Requisitos -->
-                    <div class="col-md-6">
-                        <div class="card product-card-gray p-4 shadow-sm rounded-4 h-100">
-                            <h3 class="mb-3"><i class="fas fa-clipboard-list me-2 text-primary"></i>Prerrequisitos</h3>
-                            <p class="mb-3">Si te interesa optar a un crédito para negocio, asegúrate de cumplir con las siguientes condiciones mínimas:</p>
-                            
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Ser guatemalteco (a).</li>
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Edad entre 18 y 65 años.</li>
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Presentar DPI.</li>
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Comprobante de servicios básicos.</li>
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Mínimo un año de estar operando el negocio.</li>
-                                <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Conocer al compañero (para Fianza Cruzada o Grupo Solidario).</li>
-                            </ul>
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold" style="color: var(--primary-blue);">Prerrequisitos del Crédito</h2>
+                    <p class="text-muted fs-6">Asegúrate de cumplir con las siguientes condiciones mínimas para optar a tu financiamiento:</p>
+                </div>
 
-                            <div class="mt-auto">
-                                <a href="cotizador.html" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.1rem;"><i class="fas fa-calculator me-2"></i>Simular tu Crédito de Negocio</a>
+                <!-- Grilla de Tarjetas de Prerrequisitos -->
+                <div class="row g-4 mb-5">
+                    <!-- Cuadro 1 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-flag"></i>
                             </div>
+                            <h5 class="fw-bold mb-2">Nacionalidad</h5>
+                            <p class="small text-muted mb-0">Ser guatemalteco (a) de nacimiento o nacionalizado.</p>
                         </div>
                     </div>
 
-                    <!-- Columna Derecha: Imagen e Información -->
+                    <!-- Cuadro 2 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-user-clock"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Rango de Edad</h5>
+                            <p class="small text-muted mb-0">Tener entre 18 y 65 años de edad cumplidos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro 3 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Identificación</h5>
+                            <p class="small text-muted mb-0">Presentar DPI original y copia vigente.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro 4 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-file-invoice"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Servicios Básicos</h5>
+                            <p class="small text-muted mb-0">Comprobante reciente de luz, agua o teléfono residencial.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro 5 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Experiencia</h5>
+                            <p class="small text-muted mb-0">Mínimo un año de estar operando el negocio activamente.</p>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro 6 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon">
+                                <i class="fas fa-users-handshake"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Compañero / Colector</h5>
+                            <p class="small text-muted mb-0">Conocer al compañero (para Fianza Cruzada o Grupo Solidario).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque Inferior de Acción e Imagen -->
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="card product-card-gray p-4 text-center shadow-sm rounded-4 h-100 d-flex flex-column justify-content-center">
+                            <h4 class="mb-3"><i class="fas fa-calculator text-primary me-2"></i>Simulador de Cuota</h4>
+                            <p class="text-muted mb-4">Calcula la cuota mensual estimada según el monto y plazo que necesitas para impulsar tu empresa.</p>
+                            <a href="cotizador.html" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.1rem;">
+                                <i class="fas fa-calculator me-2"></i>Simular tu Crédito de Negocio
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="col-md-6">
                         <div class="card product-card-gray p-4 text-center shadow-sm rounded-4 h-100">
                             <div class="overflow-hidden rounded-3 mb-3 border bg-white">
                                 <img src="imagenes/Imagen5.png" alt="Crédito de Negocio FFDL" class="img-fluid rounded">
                             </div>
-                            <h4 class="mb-2">¿Listo para impulsar tu negocio?</h4>
+                            <h4 class="mb-2">¿Listo para dar el siguiente paso?</h4>
                             <p class="small text-muted mb-4">Nuestros asesores están disponibles para orientarte en la modalidad que mejor se adecúe a tus metas.</p>
-                            
-                            <a href="contacto.html" class="btn btn-outline-primary w-100 py-3 fw-bold"><i class="fas fa-paper-plane me-2"></i>Solicitar Información</a>
+                            <a href="contacto.html" class="btn btn-outline-primary w-100 py-3 fw-bold">
+                                <i class="fas fa-paper-plane me-2"></i>Solicitar Información
+                            </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
