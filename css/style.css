@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Estilos Principales - FFDL Guatemala
+    Estilos Principales - FFDL Guatemala
    ========================================================================== */
 
 :root {
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Navbar Horizontal Forzada
+    Navbar Horizontal Forzada
    ========================================================================== */
 .Navbar, nav.Navbar {
   background-color: var(--primary-blue) !important;
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Carrusel de Pantalla Completa (Full Screen Hero)
+    Carrusel de Pantalla Completa (Full Screen Hero)
    ========================================================================== */
 #heroCarousel.carousel, 
 .carousel-inner,
@@ -241,7 +241,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Sección de Productos / Servicios
+    Sección de Productos / Servicios
    ========================================================================== */
 .section-title {
   color: var(--primary-blue);
@@ -306,7 +306,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   CTA Section (Franja Amarilla)
+    CTA Section (Franja Amarilla)
    ========================================================================== */
 .cta-section {
   background-color: var(--accent-yellow);
@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Botón Flotante de WhatsApp
+    Botón Flotante de WhatsApp
    ========================================================================== */
 .whatsapp-float {
   position: fixed;
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Footer
+    Footer
    ========================================================================== */
 .footer {
   background-color: var(--primary-blue);
@@ -418,7 +418,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Responsivo (Menú Hamburguesa Móvil)
+    Responsivo (Menú Hamburguesa Móvil)
    ========================================================================== */
 @media (max-width: 991.98px) {
   .navbar-toggler {
@@ -491,7 +491,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 }
 
 /* ==========================================================================
-   Sección de Logos en Movimiento (Marquesina Infinita)
+    Sección de Logos en Movimiento (Marquesina Infinita)
    ========================================================================== */
 .partners-section {
   background-color: var(--bg-light, #f8f9fa);
@@ -548,7 +548,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 .logos-slide img {
   height: 60px;
   width: auto;
-  object-clear: contain;
   transition: filter 0.3s ease;
 }
 
@@ -569,4 +568,39 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .btn {
 /* Pausar el movimiento cuando el usuario pasa el mouse por encima */
 .logos-container:hover .logos-slide {
   animation-play-state: paused;
+}
+
+/* ==========================================================================
+    Efecto Unificado para Cuadros, Tarjetas y Prerrequisitos (HOVER AMARILLO)
+   ========================================================================== */
+.product-card-f2, 
+.prereq-card, 
+.service-card, 
+.content-card,
+.card {
+    background-color: #f2f2f2 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Contorno amarillo y elevación al pasar el mouse por cualquier cuadro */
+.product-card-f2:hover, 
+.prereq-card:hover, 
+.service-card:hover, 
+.content-card:hover,
+.card:hover {
+    border-color: var(--accent-yellow) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 6px 15px rgba(0, 35, 75, 0.08) !important;
+}
+
+/* Círculo del icono cambia a amarillo sólido y el icono a azul oscuro */
+.prereq-card:hover .prereq-icon {
+    background-color: var(--accent-yellow) !important;
+    color: var(--primary-blue) !important;
+}
+
+.prereq-card:hover .prereq-icon i {
+    color: var(--primary-blue) !important;
 }

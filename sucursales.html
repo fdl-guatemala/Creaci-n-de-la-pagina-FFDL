@@ -10,15 +10,17 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
         <style>
-            /* Estilo personalizado para las tarjetas de sucursales en gris suave */
+            /* Estilo unificado para las tarjetas de sucursales con contorno amarillo en hover */
             .branch-card-gray {
-                background-color: #f8f9fa !important;
-                border: 1px solid #e2e8f0;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background-color: #f2f2f2 !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 12px !important;
+                transition: all 0.3s ease !important;
             }
             .branch-card-gray:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+                border-color: var(--accent-yellow) !important;
+                transform: translateY(-4px) !important;
+                box-shadow: 0 6px 15px rgba(0, 35, 75, 0.08) !important;
             }
             .branch-card-gray h4 {
                 color: var(--primary-blue) !important;
@@ -27,6 +29,14 @@
             .branch-card-gray p {
                 color: #2d3748 !important;
             }
+            /* Los iconos de ubicación cambian a amarillo al hacer hover sobre la tarjeta */
+            .branch-card-gray:hover h4 i {
+                color: var(--accent-yellow) !important;
+            }
+            .branch-card-gray h4 i {
+                transition: color 0.3s ease;
+            }
+
             /* Botón flotante de WhatsApp */
             .whatsapp-float {
                 position: fixed;

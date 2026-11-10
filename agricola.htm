@@ -10,22 +10,67 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
         <style>
-            .product-header {
-                background-color: var(--primary-blue);
-                color: var(--white);
-                padding: 80px 0;
+            .product-card-f2 {
+                background-color: #f2f2f2 !important;
+                border: 1px solid #e2e8f0;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-            .content-card {
-                background-color: #f8f9fa;
+            .product-card-f2 h3, .product-card-f2 h4, .product-card-f2 h5 {
+                color: var(--primary-blue) !important;
+                font-weight: 700;
+            }
+            .product-card-f2 p, .product-card-f2 li {
+                color: #2d3748 !important;
+            }
+
+            .prereq-card {
+                background-color: #f2f2f2;
                 border: 1px solid #e2e8f0;
                 border-radius: 12px;
-                padding: 40px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                padding: 24px 20px;
+                height: 100%;
+                transition: all 0.3s ease;
             }
+            .prereq-card:hover {
+                border-color: var(--accent-yellow);
+                transform: translateY(-4px);
+                box-shadow: 0 6px 15px rgba(0,35,75,0.08);
+            }
+            .prereq-icon {
+                width: 60px;
+                height: 60px;
+                background-color: rgba(0, 35, 75, 0.05);
+                color: var(--primary-blue);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px auto;
+                font-size: 24px;
+                transition: all 0.3s ease;
+            }
+            .prereq-card:hover .prereq-icon {
+                background-color: var(--accent-yellow);
+                color: var(--primary-blue);
+            }
+
             .table-custom th {
                 background-color: var(--primary-blue) !important;
                 color: var(--white) !important;
             }
+
+            .btn-accent-yellow {
+                background-color: var(--accent-yellow) !important;
+                color: var(--primary-blue) !important;
+                border: none;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            .btn-accent-yellow:hover {
+                background-color: var(--accent-yellow-hover) !important;
+                color: var(--primary-blue) !important;
+                transform: translateY(-2px);
+            }
+
             .whatsapp-float {
                 position: fixed;
                 width: 60px;
@@ -69,7 +114,7 @@
                             <a class="nav-link dropdown-toggle active" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="productosDropdown">
                                 <li><a class="dropdown-item" href="negocio.html">Crédito para Negocio</a></li>
-                                <li><a class="dropdown-item active" href="agricola.html">Credito Agricola</a></li>
+                                <li><a class="dropdown-item active" href="agricola.htm">Crédito Agrícola Mujeres</a></li>
                                 <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
@@ -85,75 +130,172 @@
             </div>
         </nav>
 
-        <!-- Cabecera del Producto -->
-        <header class="product-header text-center">
-            <div class="container">
-                <h1 class="display-5 fw-bold mb-3">Crédito Agrícola Mujeres FDL</h1>
-                <p class="lead text-white-50 mx-auto" style="max-width: 700px;">Impulsando el sector agrícola y productivo liderado por mujeres en nuestras comunidades.</p>
+        <!-- Cabecera -->
+        <header class="py-5 text-white" style="background-color: var(--primary-blue); border: none; margin-top: 0 !important;">
+            <div class="container text-center">
+                <h1 class="section-title text-white" style="font-size: 2.5rem;">Crédito Agrícola Mujeres FDL</h1>
+                <p class="section-subtitle text-white-50" style="font-size: 1.1rem;">Impulsando el sector agrícola y productivo liderado por mujeres en nuestras comunidades.</p>
             </div>
         </header>
 
         <!-- Contenido Principal -->
         <section class="py-5">
-            <div class="container" style="max-width: 900px;">
-                <div class="content-card mb-5">
-                    <h3 class="text-primary fw-bold mb-4"><i class="fas fa-seedling me-2"></i> Destino del Crédito</h3>
-                    <ul class="list-unstyled mb-4" style="font-size: 1.05rem; line-height: 1.8;">
-                        <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Capital de trabajo:</strong> Compra de materia prima e insumos agrícolas.</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Activos Fijos:</strong> Compra y reparación de maquinaria o equipo agrícola.</li>
-                    </ul>
-
-                    <h3 class="text-primary fw-bold mb-3"><i class="fas fa-shield-alt me-2"></i> Condiciones y Garantías</h3>
-                    <p class="mb-2" style="font-size: 1.05rem;"><strong>Monto máximo a otorgar:</strong> Q 20,000.00.</p>
-                    <p class="mb-2" style="font-size: 1.05rem;"><strong>Plazo:</strong> Hasta 12 meses.</p>
-                    <p class="mb-4" style="font-size: 1.05rem;"><strong>Esquema de garantías:</strong></p>
-                    <ul class="list-unstyled mb-4 ms-3" style="font-size: 1.05rem; line-height: 1.8;">
-                        <li>• Montos hasta Q 10,000.00: <strong>Sin garantía</strong>.</li>
-                        <li>• Montos mayores de Q 10,000.00 hasta Q 20,000.00: <strong>Garantía de fianza cruzada</strong>.</li>
-                    </ul>
-
-                    <h3 class="text-primary fw-bold mb-3"><i class="fas fa-percent me-2"></i> Tasas de Interés (GA Anual)</h3>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-custom text-center align-middle">
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Monto para otorgar</th>
-                                    <th>GA Anual</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Q 5,000.00</td>
-                                    <td>Q 10,000.00</td>
-                                    <td class="fw-bold">48%</td>
-                                </tr>
-                                <tr>
-                                    <td>Q 10,001.00</td>
-                                    <td>Q 15,000.00</td>
-                                    <td class="fw-bold">42%</td>
-                                </tr>
-                                <tr>
-                                    <td>Q 15,001.00</td>
-                                    <td>Q 20,000.00</td>
-                                    <td class="fw-bold">36%</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="container">
+                
+                <!-- SECCIÓN SUPERIOR: IMAGEN A LA IZQUIERDA Y DOS CUADROS APILADOS A LA DERECHA -->
+                <div class="row g-4 mb-5">
+                    
+                    <!-- Columna Izquierda: Imagen del Producto -->
+                    <div class="col-lg-5">
+                        <div class="card product-card-f2 p-4 text-center shadow-sm rounded-4 h-100 d-flex flex-column justify-content-center">
+                            <div class="overflow-hidden rounded-3 bg-white border mb-0">
+                                <img src="imagenes/diseños_4.png" alt="Crédito Agrícola Mujeres FDL" class="img-fluid rounded">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="text-center mt-5">
-                        <a href="cotizador.html" class="btn btn-primary btn-lg px-5 py-3 fw-bold me-3">
-                            <i class="fas fa-calculator me-2"></i> Cotizar este Crédito
-                        </a>
-                        <a href="contacto.html" class="btn btn-outline-primary btn-lg px-5 py-3 fw-bold mt-2 mt-sm-0">
-                            <i class="fas fa-paper-plane me-2"></i> Solicitar Asesoría
-                        </a>
+                    <!-- Columna Derecha: Cuadro de Descripción (Arriba) y Cuadro de Destino (Abajo) -->
+                    <div class="col-lg-7">
+                        <div class="d-flex flex-column gap-4 h-100">
+                            
+                            <!-- Cuadro 1: Descripción del Producto -->
+                            <div class="card product-card-f2 p-4 shadow-sm rounded-4">
+                                <h3 class="mb-3"><i class="fas fa-seedling me-2 text-primary"></i>Crédito Agrícola Mujeres FDL</h3>
+                                <p class="mb-3" style="line-height: 1.6;">
+                                    Programa especializado enfocado en empoderar a las productoras del campo, brindando facilidades y condiciones preferenciales para potenciar sus cosechas e iniciativas agrícolas.
+                                </p>
+                                <div>
+                                    <a href="cotizador.html" class="btn btn-accent-yellow px-4 py-2 fw-bold shadow-sm" style="font-size: 1rem;">
+                                        <i class="fas fa-calculator me-2"></i>Simular tu Crédito
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Cuadro 2: Destino del Crédito -->
+                            <div class="card product-card-f2 p-4 shadow-sm rounded-4">
+                                <h3 class="mb-3"><i class="fas fa-bullseye me-2 text-primary"></i>Destino del Crédito</h3>
+                                <ul class="list-unstyled mb-3" style="line-height: 1.8;">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Capital de trabajo:</strong> Compra de materia prima e insumos agrícolas.</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i> <strong>Activos Fijos:</strong> Compra y reparación de maquinaria o equipo agrícola.</li>
+                                </ul>
+                                <div>
+                                    <a href="contacto.html" class="btn btn-outline-primary px-4 py-2 fw-bold">
+                                        <i class="fas fa-paper-plane me-2"></i>Solicitar Asesoría
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SECCIÓN CENTRAL: CONDICIONES, GARANTÍAS Y TASAS -->
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-12">
+                        <div class="card product-card-f2 p-4 shadow-sm rounded-4">
+                            <h3 class="mb-3"><i class="fas fa-shield-alt me-2 text-primary"></i>Condiciones y Esquema de Garantías</h3>
+                            <p class="mb-2 fs-6"><strong>Monto máximo a otorgar:</strong> Q 20,000.00.</p>
+                            <p class="mb-3 fs-6"><strong>Plazo:</strong> Hasta 12 meses.</p>
+                            <p class="mb-2 fs-6"><strong>Garantías aplicables:</strong></p>
+                            <ul class="list-unstyled mb-4 ms-3" style="line-height: 1.8;">
+                                <li>• Montos hasta Q 10,000.00: <strong>Sin garantía</strong>[cite: 1].</li>
+                                <li>• Montos mayores de Q 10,000.00 hasta Q 20,000.00: <strong>Garantía de fianza cruzada</strong>[cite: 1].</li>
+                            </ul>
+
+                            <h4 class="mb-3"><i class="fas fa-percent me-2 text-primary"></i>Tasas de Interés (GA Anual)</h4>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-custom text-center align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Monto para otorgar</th>
+                                            <th>GA Anual</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Q 5,000.00</td>
+                                            <td>Q 10,000.00</td>
+                                            <td class="fw-bold">48%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Q 10,001.00</td>
+                                            <td>Q 15,000.00</td>
+                                            <td class="fw-bold">42%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Q 15,001.00</td>
+                                            <td>Q 20,000.00</td>
+                                            <td class="fw-bold">36%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- SECCIÓN INFERIOR: PRERREQUISITOS (IGUALES A CRÉDITO PARA NEGOCIO) -->
+                <div class="text-center mb-4">
+                    <h2 class="fw-bold" style="color: var(--primary-blue);">Prerrequisitos del Crédito</h2>
+                    <p class="text-muted fs-6">Asegúrate de cumplir con las siguientes condiciones mínimas:</p>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon"><i class="fas fa-flag"></i></div>
+                            <h5 class="fw-bold mb-2">Nacionalidad</h5>
+                            <p class="small text-muted mb-0">Ser guatemalteco (a) de nacimiento o nacionalizado.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon"><i class="fas fa-user-clock"></i></div>
+                            <h5 class="fw-bold mb-2">Rango de Edad</h5>
+                            <p class="small text-muted mb-0">Tener entre 18 y 65 años de edad cumplidos.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon"><i class="fas fa-id-card"></i></div>
+                            <h5 class="fw-bold mb-2">Identificación</h5>
+                            <p class="small text-muted mb-0">Presentar DPI original y copia vigente.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon"><i class="fas fa-file-invoice"></i></div>
+                            <h5 class="fw-bold mb-2">Servicios Básicos</h5>
+                            <p class="small text-muted mb-0">Comprobante reciente de luz, agua o teléfono residencial.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="prereq-card text-center shadow-sm">
+                            <div class="prereq-icon"><i class="fas fa-store"></i></div>
+                            <h5 class="fw-bold mb-2">Experiencia</h5>
+                            <p class="small text-muted mb-0">Mínimo un año de estar operando el negocio o cultivo activamente.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                <div class="prereq-card text-center shadow-sm">
+                    <div class="prereq-icon"><i class="fas fa-handshake"></i></div>
+                        <h5 class="fw-bold mb-2">Compañero / Colector</h5>
+                        <p class="small text-muted mb-0">Conocer al compañero (para Fianza Cruzada o Grupo Solidario).</p>
+                    </div>
+                </div>
+
+                <!-- Botón de Contacto al Final -->
+                <div class="text-center mt-5">
+                    <a href="contacto.html" class="btn btn-outline-primary px-5 py-3 fw-bold shadow-sm" style="font-size: 1.1rem;">
+                        <i class="fas fa-paper-plane me-2"></i>Solicitar Mayor Información con un Asesor
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- Botón Flotante de WhatsApp -->
+        <!-- Botón Flotante WhatsApp -->
         <a href="https://wa.me/50251948831" class="whatsapp-float" target="_blank" aria-label="Escríbenos por WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>

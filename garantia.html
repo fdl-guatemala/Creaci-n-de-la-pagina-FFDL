@@ -10,15 +10,17 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
         <style>
-            /* Estilo personalizado para las tarjetas de garantías en gris suave */
+            /* Tarjeta unificada para garantías con efecto hover de contorno amarillo */
             .guarantee-card-gray {
-                background-color: #f8f9fa !important;
-                border: 1px solid #e2e8f0;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background-color: #f2f2f2 !important;
+                border: 1px solid #e2e8f0 !important;
+                border-radius: 12px !important;
+                transition: all 0.3s ease !important;
             }
             .guarantee-card-gray:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+                border-color: var(--accent-yellow) !important;
+                transform: translateY(-4px) !important;
+                box-shadow: 0 6px 15px rgba(0, 35, 75, 0.08) !important;
             }
             .guarantee-card-gray h4 {
                 color: var(--primary-blue) !important;
@@ -27,6 +29,15 @@
             .guarantee-card-gray p, .guarantee-card-gray li {
                 color: #2d3748 !important;
             }
+            /* Los iconos cambian a amarillo al hacer hover sobre la tarjeta */
+            .guarantee-card-gray:hover .icon-wrapper,
+            .guarantee-card-gray:hover .icon-wrapper i {
+                color: var(--accent-yellow) !important;
+            }
+            .icon-wrapper {
+                transition: color 0.3s ease;
+            }
+
             /* Botón flotante de WhatsApp */
             .whatsapp-float {
                 position: fixed;
@@ -120,7 +131,8 @@
                         <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
                             <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-users fa-3x"></i></div>
                             <h4 class="card-title">Garantía Solidaria</h4>
-                            <p class="card-text text-muted">Para créditos en grupo de 3 a 5 personas. Para respaldar este crédito los miembros del grupo son fiadores entre sí. Por lo tanto se responsabilizan por la obligación de pago de todos los créditos del grupo.</p>
+                            <p class="card-text text-muted">Firma solidaria de tres o más personas, quienes son los solicitantes y fiadores entre sí, solidaria y mancomunadamente responsables del pago total de la obligación.
+</p>
                         </div>
                     </div>
 
@@ -129,7 +141,7 @@
                         <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
                             <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-user-check fa-3x"></i></div>
                             <h4 class="card-title">Garantía Fiduciaria</h4>
-                            <p class="card-text text-muted">Para respaldar tu crédito una o más personas de tu entera confianza se comprometen a ser fiadores. Eso quiere decir que asumen la obligación de pago en caso tú no puedas cumplir.</p>
+                            <p class="card-text text-muted">Firma solidaria de una o más personas naturales que se constituyen como garantes.</p>
                         </div>
                     </div>
 
@@ -138,7 +150,7 @@
                         <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
                             <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-handshake fa-3x"></i></div>
                             <h4 class="card-title">Garantía Cruzada</h4>
-                            <p class="card-text text-muted">Dos personas sacan un crédito y cada una respalda a la otra en caso no pueda cumplir su obligación.</p>
+                            <p class="card-text text-muted">Dos personas, (persona A, Persona B) comparecen relacionadas en dos obligaciones recíprocas. La Persona A comparece como deudor y la persona B comparece como fiador y viceversa.</p>
                         </div>
                     </div>
 
@@ -147,7 +159,8 @@
                         <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
                             <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-home fa-3x"></i></div>
                             <h4 class="card-title">Garantía Hipotecaria</h4>
-                            <p class="card-text text-muted">Utilizada para créditos de vivienda o montos elevados respaldados por un bien inmueble.</p>
+                            <p class="card-text text-muted">Consiste en el derecho real que grava un bien inmueble.
+</p>
                         </div>
                     </div>
 
@@ -156,7 +169,16 @@
                         <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
                             <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-file-contract fa-3x"></i></div>
                             <h4 class="card-title">Garantía Mobiliaria</h4>
-                            <p class="card-text text-muted">Para respaldar tu crédito necesitas contar con la escritura de un inmueble (Terreno, Construcción, etc.).</p>
+                            <p class="card-text text-muted">Consiste en el derecho real que grava uno o varios bienes muebles. Para esta garantía se aceptan: automóviles, motocicletas y maquinaria.</p>
+                        </div>
+                    </div>
+
+                    <!-- Garantia sin garantia-->
+                    <div class="col-md-6">
+                        <div class="card h-100 guarantee-card-gray p-4 text-center shadow-sm rounded-4">
+                            <div class="icon-wrapper mb-3 text-primary"><i class="fas fa-file-contract fa-3x"></i></div>
+                            <h4 class="card-title">Sin garantía</h4>
+                            <p class="card-text text-muted">Para clientes que demuestren tener como máximo una o dos deuda con otras instituciones y tener buen récord crediticio.</p>
                         </div>
                     </div>
 
