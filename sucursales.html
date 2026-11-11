@@ -29,12 +29,28 @@
             .branch-card-gray p {
                 color: #2d3748 !important;
             }
-            /* Los iconos de ubicación cambian a amarillo al hacer hover sobre la tarjeta */
             .branch-card-gray:hover h4 i {
                 color: var(--accent-yellow) !important;
             }
             .branch-card-gray h4 i {
                 transition: color 0.3s ease;
+            }
+
+            /* Estilo para que la imagen responda como un enlace clicable hacia Google Maps */
+            .map-link {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                text-decoration: none;
+                overflow: hidden;
+                border-radius: 8px;
+            }
+            .map-link img {
+                transition: transform 0.4s ease, filter 0.3s ease;
+            }
+            .map-link:hover img {
+                transform: scale(1.03);
+                filter: brightness(1.05);
             }
 
             /* Botón flotante de WhatsApp */
@@ -88,8 +104,7 @@
                                 <li>
                                     <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
                                 </li>
-                                <!-- <li><a class="dropdown-item" href="personales.html">Crédito Para Gastos Personales</a></li> -->
-                                 <li><a class="dropdown-item" href="agricola.htm">Credito Agricola</a></li>
+                                <li><a class="dropdown-item" href="agricola.htm">Credito Agricola</a></li>
                                 <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
@@ -134,9 +149,11 @@
                             <p class="mb-2"><strong>Teléfono:</strong> 2232-4301</p>
                             <p class="mb-2"><strong>WhatsApp:</strong> 5194-8831</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.3300460028695!2d-90.52062668515933!3d14.637196989779126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a21857252237%3A0x423aaf9dbc2daf03!2sFDL+de+Guatemala!5e0!3m2!1ses-419!2sgt!4v1554355216791!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
+                            
+                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Oficina Central[cite: 2] -->
+                            <a href="https://www.google.com/maps/search/?api=1&query=FDL+de+Guatemala" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
+                                <img src="imagenes/oficinas_centrales.webp" alt="Ubicación Oficina Central Guatemala" class="w-100 h-100 object-fit-cover">
+                            </a>
                         </div>
                     </div>
 
@@ -148,9 +165,11 @@
                             <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
                             <p class="mb-2"><strong>Teléfono:</strong> 7839-4066</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9698627872835!2d-90.8219292851591!3d14.657651789766218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85896d88aa093555%3A0x821f3619e2426265!2sFDL+Chimaltenango!5e0!3m2!1ses-419!2sgt!4v1554355377805!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
+                            
+                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Chimaltenango[cite: 2] -->
+                            <a href="https://www.google.com/maps/search/?api=1&query=FDL+Chimaltenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
+                                <img src="imagenes/Chimaltenango.jpeg" alt="Ubicación Sucursal Chimaltenango" class="w-100 h-100 object-fit-cover">
+                            </a>
                         </div>
                     </div>
 
@@ -162,9 +181,11 @@
                             <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
                             <p class="mb-2"><strong>Teléfono:</strong> 7872-3492</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.064577494334!2d-91.50600468516049!3d14.538298789842155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858ec21527a51ce7%3A0xe7f12856f37e9e5a!2sFDL+Mazatenango!5e0!3m2!1ses-419!2sgt!4v1554355030892!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
+                            
+                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Mazatenango[cite: 2] -->
+                            <a href="https://www.google.com/maps/search/?api=1&query=FDL+Mazatenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
+                                <img src="imagenes/Mazatenango.jpeg" alt="Ubicación Sucursal Mazatenango" class="w-100 h-100 object-fit-cover">
+                            </a>
                         </div>
                     </div>
 
@@ -176,9 +197,11 @@
                             <p class="mb-2"><strong>Atención:</strong> Lunes a Viernes 7:00 AM - 4:00 PM | Sábados: 8:00 AM - 12:00 PM</p>
                             <p class="mb-2"><strong>Teléfono:</strong> 7725-4101</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
-                            <div class="ratio ratio-16x9 rounded overflow-hidden border mt-auto">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.6388750465408!2d-91.52474998515684!3d14.845512289646903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e99a8bcb3a95f%3A0x47118d32b69ffc7!2sFDL+Quetzaltenango!5e0!3m2!1ses-419!2sgt!4v1554354727463!5m2!1ses-419!2sgt" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
+                            
+                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Quetzaltenango[cite: 2] -->
+                            <a href="https://www.google.com/maps/search/?api=1&query=FDL+Quetzaltenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
+                                <img src="imagenes/Quetzaltenango.jpeg" alt="Ubicación Sucursal Quetzaltenango" class="w-100 h-100 object-fit-cover">
+                            </a>
                         </div>
                     </div>
 
