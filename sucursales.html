@@ -50,7 +50,53 @@
             }
             .map-link:hover img {
                 transform: scale(1.03);
-                filter: brightness(1.05);
+                filter: brightness(0.85);
+            }
+
+            /* Indicador redondeado / circular sobre la imagen */
+            .map-badge-circle {
+                position: absolute;
+                bottom: 12px;
+                right: 12px;
+                left: auto;
+                top: auto;
+                width: auto !important;
+                height: auto !important;
+                background-color: rgba(0, 35, 75, 0.92);
+                color: #ffffff;
+                border: 2px solid var(--accent-yellow);
+                border-radius: 50px;
+                padding: 8px 16px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                font-family: 'Montserrat', sans-serif;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+                z-index: 10;
+                transition: all 0.3s ease;
+            }
+            .map-badge-circle i {
+                background-color: var(--accent-yellow);
+                color: var(--primary-blue);
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.75rem;
+                flex-shrink: 0;
+            }
+            .map-link:hover .map-badge-circle {
+                background-color: var(--accent-yellow);
+                color: var(--primary-blue);
+                transform: scale(1.04);
+            }
+            .map-link:hover .map-badge-circle i {
+                background-color: var(--primary-blue);
+                color: var(--accent-yellow);
             }
 
             /* Botón flotante de WhatsApp */
@@ -105,10 +151,10 @@
                                     <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
                                 </li>
                                 <li><a class="dropdown-item" href="agricola.htm">Credito Agricola</a></li>
-                                <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
+                                <!--<li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>-->
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
-                                <li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>
+                                <!--<li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>-->
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -150,9 +196,13 @@
                             <p class="mb-2"><strong>WhatsApp:</strong> 5194-8831</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
                             
-                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Oficina Central[cite: 2] -->
+                            <!-- Imagen clicable hacia Google Maps con indicador -->
                             <a href="https://www.google.com/maps/search/?api=1&query=FDL+de+Guatemala" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
                                 <img src="imagenes/oficinas_centrales.webp" alt="Ubicación Oficina Central Guatemala" class="w-100 h-100 object-fit-cover">
+                                <span class="map-badge-circle">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Haz clic en la imagen para entrar al mapa
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -166,9 +216,13 @@
                             <p class="mb-2"><strong>Teléfono:</strong> 7839-4066</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
                             
-                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Chimaltenango[cite: 2] -->
+                            <!-- Imagen clicable hacia Google Maps con indicador -->
                             <a href="https://www.google.com/maps/search/?api=1&query=FDL+Chimaltenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
                                 <img src="imagenes/Chimaltenango.jpeg" alt="Ubicación Sucursal Chimaltenango" class="w-100 h-100 object-fit-cover">
+                                <span class="map-badge-circle">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Haz clic en la imagen para entrar al mapa
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -182,9 +236,13 @@
                             <p class="mb-2"><strong>Teléfono:</strong> 7872-3492</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
                             
-                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Mazatenango[cite: 2] -->
+                            <!-- Imagen clicable hacia Google Maps con indicador -->
                             <a href="https://www.google.com/maps/search/?api=1&query=FDL+Mazatenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
                                 <img src="imagenes/Mazatenango.jpeg" alt="Ubicación Sucursal Mazatenango" class="w-100 h-100 object-fit-cover">
+                                <span class="map-badge-circle">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Haz clic en la imagen para entrar al mapa
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -198,13 +256,42 @@
                             <p class="mb-2"><strong>Teléfono:</strong> 7725-4101</p>
                             <p class="mb-3"><strong>Correo:</strong> info@ffdldeguatemala.org</p>
                             
-                            <!-- Imagen clicable hacia Google Maps con la dirección exacta de Quetzaltenango[cite: 2] -->
+                            <!-- Imagen clicable hacia Google Maps con indicador -->
                             <a href="https://www.google.com/maps/search/?api=1&query=FDL+Quetzaltenango" target="_blank" rel="noopener noreferrer" class="map-link ratio ratio-16x9 border mt-auto d-block" title="Haz clic para ver la ubicación en Google Maps">
                                 <img src="imagenes/Quetzaltenango.jpeg" alt="Ubicación Sucursal Quetzaltenango" class="w-100 h-100 object-fit-cover">
+                                <span class="map-badge-circle">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    Haz clic en la imagen para entrar al mapa
+                                </span>
                             </a>
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+         <!-- Banner de Aliados Ampliado -->
+        <section class="partners-section">
+            <div class="container-fluid text-center">
+                <h3 class="partners-title">Nuestros Aliados y Socios Estratégicos</h3>
+                <div class="logos-container">
+                    <div class="logos-slide">
+                        <img src="imagenes/logo_transunion.svg" alt="transUnion">
+                        <img src="imagenes/logo-redcamif.png" alt="Radcamit">
+                        <img src="imagenes/logo-serinsa.png" alt="Serinsa">
+                        <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
+                        <img src="imagenes/logo_redimif.png" alt="Radimif">
+                        <img src="imagenes/CompañiadeJesus.png" alt="Logo">
+                    </div>
+                    <div class="logos-slide" aria-hidden="true">
+                        <img src="imagenes/logo_transunion.svg" alt="transUnion">
+                        <img src="imagenes/logo-redcamif.png" alt="Radcamit">
+                        <img src="imagenes/logo-serinsa.png" alt="Serinsa">
+                        <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
+                        <img src="imagenes/logo_redimif.png" alt="Radimif">
+                        <img src="imagenes/CompañiadeJesus.png" alt="Logo">
+                    </div>
                 </div>
             </div>
         </section>

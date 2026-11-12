@@ -15,90 +15,100 @@
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
         <style>
-    /* Botón flotante de WhatsApp */
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: transform 0.3s ease;
-    }
-    .whatsapp-float:hover {
-        transform: scale(1.1);
-        color: #FFF;
-    }
+            /* Aumentar tamaño de las letras del menú principal */
+            .navbar-nav .nav-link {
+                font-size: 1.15rem !important;
+                font-weight: 500;
+            }
+            /* Aumentar tamaño de las opciones dentro del menú desplegable (Productos) */
+            .dropdown-menu .dropdown-item {
+                font-size: 1.05rem !important;
+            }
 
-    /* Espaciado de productos */
-    .products-section-wrapper {
-        padding-top: 60px !important;
-        padding-bottom: 50px !important;
-    }
-    .section-title {
-        font-size: 2.6rem !important;
-        font-weight: 700 !important;
-        color: var(--primary-blue, #00234b) !important;
-        margin-bottom: 15px !important;
-    }
-    .section-subtitle {
-        font-size: 1.2rem !important;
-        color: #6c757d;
-    }
+            /* Botón flotante de WhatsApp */
+            .whatsapp-float {
+                position: fixed;
+                width: 60px;
+                height: 60px;
+                bottom: 40px;
+                right: 40px;
+                background-color: #25d366;
+                color: #FFF;
+                border-radius: 50px;
+                text-align: center;
+                font-size: 30px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                transition: transform 0.3s ease;
+            }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: #FFF;
+            }
 
-    /* Reducción del relleno superior para eliminar el espacio en blanco */
-    section.partners-section,
-    .partners-section {
-        padding-top: 35px !important; /* Reduce drásticamente el espacio blanco superior */
-        padding-bottom: 50px !important;
-        background-color: #f8f9fa !important;
-        overflow: hidden;
-    }
-    .partners-title {
-        font-size: 2.4rem !important;
-        font-weight: 700 !important;
-        margin-top: 0 !important;
-        margin-bottom: 35px !important; /* Espacio moderado entre título y logos */
-        color: var(--primary-blue, #00234b) !important;
-        text-align: center;
-    }
-    .logos-container {
-        display: flex;
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-    .logos-slide {
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        justify-content: space-around;
-        min-width: 100%;
-    }
-    .logos-slide img {
-        max-height: 90px;
-        width: auto;
-        object-fit: contain;
-        filter: grayscale(15%);
-        opacity: 0.9;
-        transition: all 0.3s ease;
-    }
-    .logos-slide img:hover {
-        filter: grayscale(0%);
-        opacity: 1;
-        transform: scale(1.08);
-    }
-</style>
+            /* Espaciado de productos */
+            .products-section-wrapper {
+                padding-top: 60px !important;
+                padding-bottom: 50px !important;
+            }
+            .section-title {
+                font-size: 2.6rem !important;
+                font-weight: 700 !important;
+                color: var(--primary-blue, #00234b) !important;
+                margin-bottom: 15px !important;
+            }
+            .section-subtitle {
+                font-size: 1.2rem !important;
+                color: #6c757d;
+            }
+
+            /* Reducción del relleno superior para eliminar el espacio en blanco */
+            section.partners-section,
+            .partners-section {
+                padding-top: 35px !important;
+                padding-bottom: 50px !important;
+                background-color: #f8f9fa !important;
+                overflow: hidden;
+            }
+            .partners-title {
+                font-size: 2.4rem !important;
+                font-weight: 700 !important;
+                margin-top: 0 !important;
+                margin-bottom: 35px !important;
+                color: var(--primary-blue, #00234b) !important;
+                text-align: center;
+            }
+            .logos-container {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+            .logos-slide {
+                display: flex;
+                align-items: center;
+                gap: 140px;
+                justify-content: space-around;
+                min-width: 100%;
+            }
+            .logos-slide img {
+                max-height: 90px;
+                width: auto;
+                object-fit: contain;
+                filter: grayscale(15%);
+                opacity: 0.9;
+                transition: all 0.3s ease;
+            }
+            .logos-slide img:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+                transform: scale(1.08);
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar -->
@@ -125,11 +135,11 @@
                                 <li>
                                     <a class="dropdown-item" href="negocio.html">Crédito para Negocio</a>
                                 </li>
-                                <li><a class="dropdown-item" href="agricola.htm">Credito Agricola</a></li>
-                                <li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>
+                                <li><a class="dropdown-item" href="agricola.htm">Crédito Agrícola</a></li>
+                                <!--<li><a class="dropdown-item" href="vivienda.html">Crédito para Vivienda</a></li>-->
                                 <li><a class="dropdown-item" href="verde.html">Crédito Verde</a></li>
                                 <li><a class="dropdown-item" href="temporada.html">Crédito de Temporada</a></li>
-                                <li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>
+                                <!--<li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>-->
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -155,17 +165,16 @@
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
                 <!-- slide 1 -->
                 <div class="carousel-item active">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.8), rgba(0, 35, 75, 0.8)), url('https://images.unsplash.com/photo-1669025467316-a1bff8696c36?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1669025467316-a1bff8696c36?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <h1 class="display-4 fw-bold text-white">Microcréditos para el desarrollo</h1>
-                                    <p class="lead text-white mb-4">En Fundación Fondo de Desarrollo Local de Guatemala creemos en el potencial de cada guatemalteco. Ofrecemos microcréditos accesibles para impulsar negocios, educación y desarrollo familiar.</p>
+                                    <p class="lead text-white mb-4">En Fundación Fondo de Desarrollo Local de Guatemala creemos en el potencial de cada guatemalteca y guatemalteco. Ofrecemos microcréditos accesibles para impulsar negocios y desarrollo familiar.</p>
                                     <div class="d-flex flex-wrap gap-3">
                                         <a href="cotizador.html" class="btn btn-primary btn-lg">
                                             <i class="fas fa-calculator me-2"></i> Cotizador
@@ -181,12 +190,12 @@
                 </div> 
                 <!-- slide 2 -->
                 <div class="carousel-item">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.8), rgba(0, 35, 75, 0.8)), url('https://images.unsplash.com/photo-1540857650430-e405679aa267?q=80&amp;w=1632&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1540857650430-e405679aa267?q=80&amp;w=1632&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
                                     <h1 class="display-4 fw-bold text-white">Impulsa tu negocio</h1>
-                                    <p class="lead text-white mb-4">Créditos accesibles para emprendedores y pequeños negocios. Desde Q5,000 hasta Q100,000 con plazos flexibles y asesoría personalizada.</p>
+                                    <p class="lead text-white mb-4">Créditos accesibles para micro y pequeños negocios. Desde Q1,000 hasta Q160,000, con plazos flexibles y asesoría personalizada.</p>
                                     <div class="d-flex flex-wrap gap-3">
                                         <a href="negocio.html" class="btn btn-primary btn-lg">
                                             <i class="fas fa-store me-2"></i> Crédito para Negocio
@@ -202,33 +211,12 @@
                 </div>
                 <!-- slide 3 -->
                 <div class="carousel-item">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.8), rgba(0, 35, 75, 0.8)), url('https://images.unsplash.com/photo-1559991677-18777f628daf?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1592421497326-79e20eea7224?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
-                                    <h1 class="display-4 fw-bold text-white">Mejora tu vivienda</h1>
-                                    <p class="lead text-white mb-4">Financiamiento para construcción, ampliación o remodelación de tu hogar. Tasas preferenciales y plazos de hasta 60 meses en microcrédito.</p>
-                                    <div class="d-flex flex-wrap gap-3">
-                                        <a href="vivienda.html" class="btn btn-primary btn-lg">
-                                            <i class="fas fa-home me-2"></i> Crédito para Vivienda
-                                        </a>
-                                        <a href="contacto.html" class="btn btn-outline-light btn-lg">
-                                            <i class="fas fa-file-signature me-2"></i> Solicitar Información
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- slide 4 -->
-                <div class="carousel-item">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.8), rgba(0, 35, 75, 0.8)), url('https://images.unsplash.com/photo-1592421497326-79e20eea7224?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <h1 class="display-4 fw-bold text-white">37 años apoyando a Guatemala.</h1>
-                                    <p class="lead text-white mb-4">Más de 30 años apoyando el desarrollo económico y social de las comunidades guatemaltecas.</p>
+                                    <h1 class="display-4 fw-bold text-white">Apoyamos la realización de las y los guatemaltecos.</h1>
+                                    <p class="lead text-white mb-4">Más de 30 años comprometidos con el desarrollo económico de las comunidades y familias.</p>
                                     <div class="d-flex flex-wrap gap-3">
                                         <a href="featured-clients.html" class="btn btn-primary btn-lg">
                                             <i class="fas fa-users me-2"></i> Ver Historias de Éxito
@@ -320,6 +308,7 @@
                         <img src="imagenes/logo-serinsa.png" alt="Serinsa">
                         <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
                         <img src="imagenes/logo_redimif.png" alt="Radimif">
+                        <img src="imagenes/CompañiadeJesus.png" alt="Logo">
                     </div>
                     <div class="logos-slide" aria-hidden="true">
                         <img src="imagenes/logo_transunion.svg" alt="transUnion">
@@ -327,6 +316,7 @@
                         <img src="imagenes/logo-serinsa.png" alt="Serinsa">
                         <img src="imagenes/logo_panamerican_life.svg" alt="Pan-American life Guatemala">
                         <img src="imagenes/logo_redimif.png" alt="Radimif">
+                        <img src="imagenes/CompañiadeJesus.png" alt="Logo">
                     </div>
                 </div>
             </div>
@@ -366,7 +356,8 @@
                         <h5 class="footer-title mb-3">Horario de Atención</h5>
                         <ul class="footer-hours list-unstyled">
                             <li><i class="fas fa-check me-2"></i>Lunes a Viernes: 7:00 AM - 4:00 PM</li>
-                            <li><i class="fas fa-check me-2"></i>Sábados: 8:00 AM - 12:00 PM</li>
+                            <li><i class="fas fa-check me-2"></i>Sábados (General): 8:00 AM - 12:00 PM</li>
+                            <li><i class="fas fa-check me-2"></i>Sábados (Quetzaltenango): 7:00 AM - 11:00 AM</li>
                             <li><i class="fas fa-check me-2"></i>Domingos: Cerrado</li>
                         </ul>
                     </div>
