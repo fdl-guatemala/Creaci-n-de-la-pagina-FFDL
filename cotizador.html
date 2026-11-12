@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="imagenes/favicon.png">
         <style>
-            /* Estilo personalizado para la tarjeta gris clara del cotizador */
             .calculator-card-gray {
                 background-color: #f8f9fa !important;
                 border: 1px solid #e2e8f0;
@@ -18,7 +17,6 @@
             .calculator-card-gray label {
                 color: #2d3748 !important;
             }
-            /* Botón Amarillo Personalizado */
             .btn-accent-yellow {
                 background-color: var(--accent-yellow) !important;
                 color: var(--primary-blue) !important;
@@ -35,7 +33,6 @@
                 color: #a0aec0 !important;
                 border: none;
             }
-            /* Botón flotante de WhatsApp */
             .whatsapp-float {
                 position: fixed;
                 width: 60px;
@@ -74,12 +71,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">Nosotros</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
                             <ul class="dropdown-menu" aria-labelledby="productosDropdown">
@@ -91,18 +84,10 @@
                                 <li><a class="dropdown-item" href="ocj.html">Crédito OCJ</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="garantia.html">Garantías</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="cotizador.html">Cotizador</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sucursales.html">Sucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="garantia.html">Garantías</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="cotizador.html">Cotizador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sucursales.html">Sucursales</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -123,35 +108,26 @@
                     <form id="loanForm">
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Tipo de Crédito:</label>
-                            <select id="tipoCredito" class="form-select form-select-lg" onchange="validarSeleccion()">
+                            <select id="tipoCredito" class="form-select form-select-lg" onchange="actualizarReglasCredito()">
                                 <option value="" selected disabled>Seleccione préstamo</option>
-                                <option value="ESCALONADO">Crédito para Negocio</option>
-                                <option value="ESCALONADO">Crédito Agrícola Mujeres FDL</option>
-                                <option value="ESCALONADO">Crédito para Vivienda</option>
-                                <option value="ESCALONADO">Crédito Verde</option>
-                                <option value="ESCALONADO">Crédito de Temporada</option>
-                                <option value="OCJ">Crédito OCJ</option>
+                                <option value="NEGOCIO">Crédito para Negocio</option>
+                                <option value="AGRICOLA">Crédito Agrícola Mujeres FDL</option>
+                                <option value="VIVIENDA">Crédito para Vivienda</option>
+                                <option value="VERDE">Crédito Verde</option>
+                                <option value="TEMPORADA">Crédito de Temporada (Alchilazo)</option>
+                                <option value="OCJ_PERSONAL">Crédito OCJ - Gastos Personales</option>
+                                <option value="OCJ_VIVIENDA">Crédito OCJ - Vivienda</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Monto del Crédito (Q):</label>
-                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Ej. 15000" min="1000" max="160000" required disabled>
+                            <input type="number" id="monto" class="form-control form-control-lg" placeholder="Seleccione un tipo de crédito primero" required disabled>
+                            <div id="montoAyuda" class="form-text text-muted small mt-1"></div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold" style="font-size: 1.05rem;">Plazo en Meses:</label>
                             <select id="plazo" class="form-select form-select-lg" required disabled>
                                 <option value="" selected disabled>Seleccione el plazo</option>
-                                <option value="6">6 meses</option>
-                                <option value="8">8 meses</option>
-                                <option value="9">9 meses</option>
-                                <option value="10">10 meses</option>
-                                <option value="12">12 meses</option>
-                                <option value="15">15 meses</option>
-                                <option value="18">18 meses</option>
-                                <option value="21">21 meses</option>
-                                <option value="24">24 meses</option>
-                                <option value="33">33 meses</option>
-                                <option value="36">36 meses</option>
                             </select>
                         </div>
                         <button type="button" id="btnCalcular" onclick="calcularCuota()" class="btn btn-accent-yellow w-100 py-3 fw-bold shadow-sm" style="font-size: 1.15rem;" disabled>Calcular Cuota</button>
@@ -213,80 +189,113 @@
 
         <!-- Scripts de Control y Cálculo -->
         <script>
-            function validarSeleccion() {
-                const selectCredito = document.getElementById('tipoCredito');
+            function actualizarReglasCredito() {
+                const tipo = document.getElementById('tipoCredito').value;
                 const montoInput = document.getElementById('monto');
-                const plazoInput = document.getElementById('plazo');
+                const plazoSelect = document.getElementById('plazo');
                 const btnCalcular = document.getElementById('btnCalcular');
+                const montoAyuda = document.getElementById('montoAyuda');
                 const divResultado = document.getElementById('resultado');
 
-                if (selectCredito.value !== "") {
-                    montoInput.disabled = false;
-                    plazoInput.disabled = false;
-                    btnCalcular.disabled = false;
-                } else {
+                divResultado.style.display = 'none';
+                montoInput.value = '';
+                plazoSelect.innerHTML = '<option value="" selected disabled>Seleccione el plazo</option>';
+
+                if (!tipo) {
                     montoInput.disabled = true;
-                    plazoInput.disabled = true;
+                    plazoSelect.disabled = true;
                     btnCalcular.disabled = true;
-                    montoInput.value = '';
-                    plazoInput.value = '';
-                    divResultado.style.display = 'none';
+                    montoAyuda.textContent = '';
+                    return;
                 }
+
+                montoInput.disabled = false;
+                plazoSelect.disabled = false;
+                btnCalcular.disabled = false;
+
+                let minMonto = 1000;
+                let maxMonto = 160000;
+                let plazos = [6, 8, 9, 10, 12, 15, 18, 21, 24, 33, 36];
+
+                if (tipo === "AGRICOLA") {
+                    maxMonto = 20000;
+                    plazos = [6, 8, 9, 10, 12];
+                    montoAyuda.textContent = 'Monto máximo: Q20,000.00 | Plazo máximo: 12 meses';
+                } else if (tipo === "TEMPORADA") {
+                    maxMonto = 25000;
+                    plazos = [2, 3, 4, 5, 6];
+                    montoAyuda.textContent = 'Monto máximo: Q25,000.00 | Plazos: 2 a 6 meses';
+                } else if (tipo === "OCJ_PERSONAL") {
+                    minMonto = 1500;
+                    maxMonto = 30000;
+                    plazos = [6, 8, 9, 10, 12, 15, 18];
+                    montoAyuda.textContent = 'Monto mínimo: Q1,500.00 | Monto máximo: Q30,000.00 | Plazo: 6 a 18 meses';
+                } else if (tipo === "OCJ_VIVIENDA") {
+                    minMonto = 1500;
+                    maxMonto = 40000;
+                    plazos = [6, 8, 9, 10, 12, 15, 18, 21, 24, 33, 36];
+                    montoAyuda.textContent = 'Monto mínimo: Q1,500.00 | Monto máximo: Q40,000.00';
+                } else {
+                    montoAyuda.textContent = 'Monto permitido: Q1,000.00 a Q160,000.00';
+                }
+
+                montoInput.min = minMonto;
+                montoInput.max = maxMonto;
+                montoInput.placeholder = `Ej. ${minMonto}`;
+
+                plazos.forEach(p => {
+                    const opt = document.createElement('option');
+                    opt.value = p;
+                    opt.textContent = `${p} ${p === 1 ? 'mes' : 'meses'}`;
+                    plazoSelect.appendChild(opt);
+                });
             }
 
-            // Cálculo de Tasa Anual según el producto y monto ingresado
             function obtenerTasaAnual(monto, tipo) {
-                if (tipo === "OCJ") {
-                    if (monto <= 30000) {
-                        return 0.18;
-                    }
-                    return null; 
+                if (tipo.startsWith("OCJ")) {
+                    return 0.18; // 18% tasa anual para OCJ
                 }
 
-                if (tipo === "ESCALONADO") {
-                    if (monto >= 1000 && monto <= 5000) return 0.60;
-                    if (monto > 5000 && monto <= 10000) return 0.48;
-                    if (monto > 10000 && monto <= 20000) return 0.39;
-                    if (monto > 20000 && monto <= 30000) return 0.36;
-                    if (monto > 30000 && monto <= 50000) return 0.33;
-                    if (monto > 50000 && monto <= 80000) return 0.27;
-                    if (monto > 80000 && monto <= 110000) return 0.24;
-                    if (monto > 110000 && monto <= 160000) return 0.21;
-                    return null; 
-                }
-
-                return parseFloat(tipo);
+                if (monto >= 1000 && monto <= 5000) return 0.60;
+                if (monto > 5000 && monto <= 10000) return 0.48;
+                if (monto > 10000 && monto <= 20000) return 0.39;
+                if (monto > 20000 && monto <= 30000) return 0.36;
+                if (monto > 30000 && monto <= 50000) return 0.33;
+                if (monto > 50000 && monto <= 80000) return 0.27;
+                if (monto > 80000 && monto <= 110000) return 0.24;
+                if (monto > 110000 && monto <= 160000) return 0.21;
+                
+                return null;
             }
 
-            // Equivalente exacto a la función =PAGO(tasa_mensual, plazo, -monto) de Excel
             function funcionPago(tasaMensual, nper, pv) {
                 if (tasaMensual === 0) return pv / nper;
                 return (pv * tasaMensual) / (1 - Math.pow(1 + tasaMensual, -nper));
             }
 
             function calcularCuota() {
-                const monto = parseFloat(document.getElementById('monto').value);
+                const montoInput = document.getElementById('monto');
+                const monto = parseFloat(montoInput.value);
                 const plazo = parseInt(document.getElementById('plazo').value);
                 const tipo = document.getElementById('tipoCredito').value;
                 const divResultado = document.getElementById('resultado');
                 const txtCuota = document.getElementById('cuotaMensual');
                 const infoTasa = document.getElementById('infoTasa');
 
-                // Lista de plazos válidos según requerimiento
-                const plazosValidos = [6, 8, 9, 10, 12, 15, 18, 21, 24, 33, 36];
-
                 if (!tipo) {
                     alert('Por favor, selecciona un tipo de crédito.');
                     return;
                 }
 
-                // Validación de monto mínimo (Q 1,000.00)
-                if (!monto || monto < 1000) {
-                    alert('El monto mínimo permitido es de Q 1,000.00.');
+                const minPermitido = parseFloat(montoInput.min);
+                const maxPermitido = parseFloat(montoInput.max);
+
+                if (!monto || monto < minPermitido || monto > maxPermitido) {
+                    alert(`El monto debe estar entre Q ${minPermitido.toLocaleString()} y Q ${maxPermitido.toLocaleString()} para esta línea.`);
                     return;
                 }
 
-                if (!plazo || !plazosValidos.includes(plazo)) {
+                if (!plazo) {
                     alert('Por favor, selecciona un plazo válido.');
                     return;
                 }
@@ -294,27 +303,17 @@
                 const tasaAnual = obtenerTasaAnual(monto, tipo);
 
                 if (tasaAnual === null) {
-                    const limite = (tipo === "OCJ") ? "Q 30,000.00" : "Q 160,000.00";
-                    alert('El monto ingresado excede el límite máximo financiable de ' + limite + ' para este tipo de crédito.');
+                    alert('El monto ingresado excede el límite máximo financiable para este tipo de crédito.');
                     divResultado.style.display = 'none';
                     return;
                 }
 
-                // Tasa mensual (Tasa Anual / 12)
                 const tasaMensual = tasaAnual / 12;
-
-                // Cálculo con la fórmula =PAGO
                 const cuota = funcionPago(tasaMensual, plazo, monto);
 
                 divResultado.style.display = 'block';
                 txtCuota.textContent = 'Q ' + cuota.toFixed(2);
                 infoTasa.textContent = `Tasa anual aplicada: ${(tasaAnual * 100).toFixed(0)}% (${(tasaMensual * 100).toFixed(2)}% mensual). Valores aproximados sujetos a aprobación.`;
-
-                // Limpia los campos del formulario y bloquea nuevamente
-                document.getElementById('loanForm').reset();
-                document.getElementById('monto').disabled = true;
-                document.getElementById('plazo').disabled = true;
-                document.getElementById('btnCalcular').disabled = true;
             }
         </script>
 
