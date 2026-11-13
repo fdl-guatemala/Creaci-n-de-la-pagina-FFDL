@@ -25,6 +25,31 @@
                 font-size: 1.05rem !important;
             }
 
+            /* Estilo definitivo para que el texto resalte a la perfección sobre fotos claras */
+            .carousel-slide h1 {
+                color: #ffffff !important;
+                text-shadow: 0 2px 6px rgba(0, 35, 75, 0.9), 0 0 15px rgba(0, 0, 0, 0.8);
+            }
+            .carousel-slide p.lead {
+                color: #ffffff !important;
+                background-color: rgba(0, 35, 75, 0.65); /* Capa azul oscuro semitransparente detrás del texto */
+                padding: 12px 18px;
+                border-radius: 8px;
+                backdrop-filter: blur(4px);
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+            }
+
+            .carousel-slide .btn-outline-light {
+                color: #ffffff !important;
+                border-color: #ffffff !important;
+                background-color: rgba(0, 35, 75, 0.6);
+            }
+            .carousel-slide .btn-outline-light:hover {
+                background-color: var(--accent-yellow) !important;
+                color: var(--primary-blue) !important;
+                border-color: var(--accent-yellow) !important;
+            }
+
             /* Botón flotante de WhatsApp */
             .whatsapp-float {
                 position: fixed;
@@ -92,8 +117,8 @@
                 display: flex;
                 align-items: center;
                 gap: 140px;
-                justify-content: space-around;
-                min-width: 100%;
+                padding-right: 140px;
+                flex-shrink: 0;
             }
             .logos-slide img {
                 max-height: 90px;
@@ -169,7 +194,7 @@
             <div class="carousel-inner">
                 <!-- slide 1 -->
                 <div class="carousel-item active">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1669025467316-a1bff8696c36?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url('https://images.unsplash.com/photo-1669025467316-a1bff8696c36?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
@@ -190,7 +215,7 @@
                 </div> 
                 <!-- slide 2 -->
                 <div class="carousel-item">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1540857650430-e405679aa267?q=80&amp;w=1632&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url('https://images.unsplash.com/photo-1540857650430-e405679aa267?q=80&amp;w=1632&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
@@ -211,7 +236,7 @@
                 </div>
                 <!-- slide 3 -->
                 <div class="carousel-item">
-                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(0, 35, 75, 0.15), rgba(0, 35, 75, 0.15)), url('https://images.unsplash.com/photo-1592421497326-79e20eea7224?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="carousel-slide d-flex align-items-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), url('https://images.unsplash.com/photo-1592421497326-79e20eea7224?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6">
