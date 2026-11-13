@@ -143,7 +143,7 @@
                         <p class="mb-3 text-justify" style="font-size: 1.1rem; line-height: 1.7; color: #2d3748;">La Fundación Fondo de Desarrollo Local de Guatemala nació en el año 1989 del movimiento Internacional Fe y Alegría en Guatemala, con la visión de contribuir con el desarrollo integral de las familias. En esos años Fe y Alegría inició un programa para otorgar microcréditos a los padres de familia de los niños y niñas que atendía.</p>
                         <p class="mb-3 text-justify" style="font-size: 1.1rem; line-height: 1.7; color: #2d3748;">Después de 19 años el programa de microcréditos se desvincula de Fe y Alegría y se transforma en una entidad independiente. A partir del año 2008 se inicia operación con el nombre de Fundación Fondo de Desarrollo Local de Guatemala (FDL de Guatemala).</p>
                         <p class="mb-3 text-justify" style="font-size: 1.1rem; line-height: 1.7; color: #2d3748;">FDL de Guatemala es una institución no lucrativa, de inspiración jesuita, cuyo compromiso es amar y servir al prójimo en cada acto que realiza. Trabajamos con la visión de contribuir con el desarrollo integral de personas ubicadas en estratos socioeconómicos bajos, mediante un comportamiento ético, de servicio, respeto, honradez y lealtad en el proceso de otorgamiento de microcrédito.</p>
-                        <p class="mb-0 text-justify" style="font-size: 1.1rem; line-height: 1.7; color: #2d3748;">Históricamente la Fundación tiene 36 años de contribuir con el desarrollo integral de las personas a través del otorgamiento de microcrédito. Sus oficinas centrales se ubican en la ciudad de Guatemala, cuenta con 3 sucursales localizadas en: Ciudad Guatemala, Chimaltenango, Quetzaltenango y Mazatenango, cada una de las tres sucursales atiende a varios departamentos y sus municipios.</p>
+                        <p class="mb-0 text-justify" style="font-size: 1.1rem; line-height: 1.7; color: #2d3748;">Históricamente la Fundación tiene <strong><span id="anios-aniversario">37</span> años</strong> de contribuir con el desarrollo integral de las personas a través del otorgamiento de microcrédito. Sus oficinas centrales se ubican en la ciudad de Guatemala, cuenta con 3 sucursales localizadas en: Ciudad Guatemala, Chimaltenango, Quetzaltenango y Mazatenango, cada una de las tres sucursales atiende a varios departamentos y sus municipios.</p>
                     </div>
                 </div>
             </div>
@@ -265,12 +265,25 @@
                 </div>
                 <hr class="footer-divider my-4">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-start"><p class="mb-0">© 2026 Fundación Fondo de Desarrollo Local de Guatemala. Todos los derechos reservados.</p></div>
+                    <div class="col-md-6 text-center text-md-start"><p class="mb-0">© <span class="anio-actual">2026</span> Fundación Fondo de Desarrollo Local de Guatemala. Todos los derechos reservados.</p></div>
                     <div class="col-md-6 text-center text-md-end"><a href="#" class="footer-link">soportetecnico@ffdldeguatemala.org</a></div>
                 </div>
             </div>
         </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/script.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const anioFundacion = 1989;
+                const anioActual = new Date().getFullYear();
+                const aniosTrayectoria = anioActual - anioFundacion;
+
+                const elementoAniversario = document.getElementById("anios-aniversario");
+                if (elementoAniversario) {
+                    elementoAniversario.textContent = aniosTrayectoria;
+                }
+            });
+        </script>
     </body>
 </html>
